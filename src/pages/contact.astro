@@ -84,7 +84,8 @@ const jsonLd = {
             Fill out the form below and our team will contact you within one business day.
           </p>
 
-          <form action="#" method="POST" class="mt-8 space-y-6">
+          <div id="form-status" class="hidden rounded-lg p-4 mb-4 text-sm"></div>
+          <form id="contact-form" class="mt-8 space-y-6">
             <div class="grid gap-6 sm:grid-cols-2">
               <div>
                 <label for="firstName" class="block text-sm font-medium text-neutral-700">First Name *</label>
@@ -286,4 +287,61 @@ const jsonLd = {
       </div>
     </div>
   </section>
+
+  <script>
+    const form = document.getElementById('contact-form') as HTMLFormElement | null;
+    const status = document.getElementById('form-status');
+
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+      const originalText = submitBtn?.textContent || '';
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+      }
+
+      if (status) {
+        status.classList.add('hidden');
+      }
+
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+
+        const result = await res.json();
+
+        if (status) {
+          status.classList.remove('hidden');
+          if (res.ok) {
+            status.className = 'rounded-lg p-4 mb-4 text-sm bg-green-50 text-green-800 border border-green-200';
+            status.textContent = result.message;
+            form.reset();
+          } else {
+            status.className = 'rounded-lg p-4 mb-4 text-sm bg-red-50 text-red-800 border border-red-200';
+            status.textContent = result.error || 'Something went wrong. Please try again.';
+          }
+        }
+      } catch {
+        if (status) {
+          status.classList.remove('hidden');
+          status.className = 'rounded-lg p-4 mb-4 text-sm bg-red-50 text-red-800 border border-red-200';
+          status.textContent = 'Network error. Please try again or call us directly.';
+        }
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+        }
+      }
+    });
+  </script>
 </BaseLayout>

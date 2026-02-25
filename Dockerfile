@@ -1,4 +1,4 @@
-# Stage 1: Build the Astro static site
+# Stage 1: Build the Astro site
 FROM node:22-alpine AS build
 
 RUN corepack enable
@@ -13,10 +13,17 @@ RUN pnpm install --frozen-lockfile
 COPY . .
 RUN pnpm build
 
-# Stage 2: Serve with Caddy
-FROM caddy:2-alpine
+# Stage 2: Run the Node server
+FROM node:22-alpine AS runtime
 
-COPY Caddyfile /etc/caddy/Caddyfile
-COPY --from=build /app/dist /srv
+WORKDIR /app
+
+# Copy the built output
+COPY --from=build /app/dist ./dist
+
+ENV HOST=0.0.0.0
+ENV PORT=8080
 
 EXPOSE 8080
+
+CMD ["node", "dist/server/entry.mjs"]

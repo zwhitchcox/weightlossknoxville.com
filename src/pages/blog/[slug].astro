@@ -43,12 +43,12 @@ const jsonLd = {
   author: {
     "@type": "Organization",
     name: post.data.author,
-    url: "https://weightlossknoxville.com",
+    url: "https://weightlossknoxvilletn.com",
   },
   publisher: {
     "@type": "Organization",
     name: "Weight Loss Knox",
-    url: "https://weightlossknoxville.com",
+    url: "https://weightlossknoxvilletn.com",
   },
   datePublished: post.data.pubDate.toISOString(),
   ...(post.data.updatedDate && {
@@ -57,7 +57,7 @@ const jsonLd = {
   ...(post.data.heroImage && { image: post.data.heroImage }),
   mainEntityOfPage: {
     "@type": "WebPage",
-    "@id": `https://weightlossknoxville.com/blog/${post.id}`,
+    "@id": `https://weightlossknoxvilletn.com/blog/${post.id}`,
   },
 };
 ---

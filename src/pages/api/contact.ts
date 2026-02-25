@@ -1,5 +1,6 @@
 import type { APIRoute } from 'astro';
 import { Resend } from 'resend';
+import { RESEND_API_KEY } from 'astro:env/server';
 
 export const prerender = false;
 
@@ -17,8 +18,7 @@ export const POST: APIRoute = async ({ request }) => {
       );
     }
 
-    const apiKey = process.env.RESEND_API_KEY;
-    if (!apiKey) {
+    if (!RESEND_API_KEY) {
       console.error('RESEND_API_KEY is not set');
       return new Response(
         JSON.stringify({ error: 'Server configuration error. Please call us directly.' }),
@@ -26,7 +26,7 @@ export const POST: APIRoute = async ({ request }) => {
       );
     }
 
-    const resend = new Resend(apiKey);
+    const resend = new Resend(RESEND_API_KEY);
 
     const locationLabel = location === 'bearden' ? 'Bearden (Knoxville)' : location === 'farragut' ? 'Farragut' : 'Not specified';
 
@@ -52,7 +52,7 @@ export const POST: APIRoute = async ({ request }) => {
     const referralLabel = referral ? (referralLabels[referral] || referral) : 'Not specified';
 
     const { error } = await resend.emails.send({
-      from: 'Weight Loss Knox <noreply@weightlossknoxville.com>',
+      from: 'Weight Loss Knox <noreply@weightlossknoxvilletn.com>',
       to: 'sarah@hitchcoxaesthetics.com',
       subject: `New Consultation Request from ${firstName} ${lastName}`,
       html: `

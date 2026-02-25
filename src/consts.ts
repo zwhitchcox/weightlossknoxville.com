@@ -1,8 +1,8 @@
 export const SITE_TITLE = 'Weight Loss Knox';
 export const SITE_DESCRIPTION =
   'Medical weight loss and med spa clinic in Knoxville, TN specializing in semaglutide, tirzepatide, Botox, fillers, laser treatments, and more. Physician-supervised programs with proven results.';
-export const SITE_URL = 'https://weightlossknoxville.com';
-export const EMAIL = 'info@weightlossknoxville.com';
+export const SITE_URL = 'https://weightlossknoxvilletn.com';
+export const EMAIL = 'info@weightlossknoxvilletn.com';
 
 // Primary phone number (Bearden / main location)
 export const PHONE = '(865) 500-3135';

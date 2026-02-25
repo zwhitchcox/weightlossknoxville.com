@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { SITE_URL, PHONE, EMAIL, ADDRESS } from '../consts';
+import { SITE_URL, PHONE, EMAIL, LOCATIONS } from '../consts';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -12,14 +12,24 @@ const jsonLd = {
     name: 'Weight Loss Knox',
     telephone: PHONE,
     email: EMAIL,
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: `${ADDRESS.street}, ${ADDRESS.suite}`,
-      addressLocality: ADDRESS.city,
-      addressRegion: ADDRESS.state,
-      postalCode: ADDRESS.zip,
-      addressCountry: 'US',
-    },
+    address: [
+      {
+        '@type': 'PostalAddress',
+        streetAddress: `${LOCATIONS.bearden.street}, ${LOCATIONS.bearden.suite}`,
+        addressLocality: LOCATIONS.bearden.city,
+        addressRegion: LOCATIONS.bearden.state,
+        postalCode: LOCATIONS.bearden.zip,
+        addressCountry: 'US',
+      },
+      {
+        '@type': 'PostalAddress',
+        streetAddress: `${LOCATIONS.farragut.street}, ${LOCATIONS.farragut.suite}`,
+        addressLocality: LOCATIONS.farragut.city,
+        addressRegion: LOCATIONS.farragut.state,
+        postalCode: LOCATIONS.farragut.zip,
+        addressCountry: 'US',
+      },
+    ],
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
@@ -40,7 +50,7 @@ const jsonLd = {
 
 <BaseLayout
   title="Contact Us | Weight Loss Knox | Knoxville TN"
-  description="Contact Weight Loss Knox to schedule your medical weight loss consultation. Located in Knoxville, TN. Call us or fill out our online form today."
+  description="Contact Weight Loss Knox to schedule your medical weight loss consultation. Two locations in Knoxville: Bearden and Farragut. Call us or fill out our online form today."
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
@@ -57,7 +67,7 @@ const jsonLd = {
       <h1 class="font-serif text-4xl font-bold leading-tight sm:text-5xl">Contact Us</h1>
       <p class="mx-auto mt-4 max-w-2xl text-lg text-neutral-300">
         Ready to start your weight loss journey? Schedule a consultation or reach out with any questions.
-        Our team is here to help.
+        We have two convenient locations in Knoxville and Farragut.
       </p>
     </div>
   </section>
@@ -121,20 +131,37 @@ const jsonLd = {
               </div>
             </div>
 
-            <div>
-              <label for="interest" class="block text-sm font-medium text-neutral-700">I'm interested in...</label>
-              <select
-                id="interest"
-                name="interest"
-                class="mt-1.5 block w-full rounded-lg border border-neutral-200 px-4 py-3 text-sm text-neutral-800 shadow-sm transition-colors focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none bg-neutral-50"
-              >
-                <option value="">Select an option</option>
-                <option value="tirzepatide">Tirzepatide (Mounjaro/Zepbound)</option>
-                <option value="semaglutide">Semaglutide (Wegovy/Ozempic)</option>
-                <option value="general">General Weight Loss Consultation</option>
-                <option value="nutrition">Nutrition Counseling</option>
-                <option value="other">Other</option>
-              </select>
+            <div class="grid gap-6 sm:grid-cols-2">
+              <div>
+                <label for="location" class="block text-sm font-medium text-neutral-700">Preferred Location</label>
+                <select
+                  id="location"
+                  name="location"
+                  class="mt-1.5 block w-full rounded-lg border border-neutral-200 px-4 py-3 text-sm text-neutral-800 shadow-sm transition-colors focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none bg-neutral-50"
+                >
+                  <option value="">Select a location</option>
+                  <option value="bearden">Bearden (Knoxville)</option>
+                  <option value="farragut">Farragut</option>
+                </select>
+              </div>
+              <div>
+                <label for="interest" class="block text-sm font-medium text-neutral-700">I'm interested in...</label>
+                <select
+                  id="interest"
+                  name="interest"
+                  class="mt-1.5 block w-full rounded-lg border border-neutral-200 px-4 py-3 text-sm text-neutral-800 shadow-sm transition-colors focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none bg-neutral-50"
+                >
+                  <option value="">Select an option</option>
+                  <option value="tirzepatide">Tirzepatide (Mounjaro/Zepbound)</option>
+                  <option value="semaglutide">Semaglutide (Wegovy/Ozempic)</option>
+                  <option value="botox">Botox / Dysport / Jeuveau</option>
+                  <option value="filler">Dermal Fillers</option>
+                  <option value="laser">Laser Treatments</option>
+                  <option value="microneedling">Microneedling</option>
+                  <option value="chemical-peel">Chemical Peels</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
             </div>
 
             <div>
@@ -160,7 +187,7 @@ const jsonLd = {
                 name="message"
                 rows="4"
                 class="mt-1.5 block w-full rounded-lg border border-neutral-200 px-4 py-3 text-sm text-neutral-800 shadow-sm transition-colors focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none bg-neutral-50"
-                placeholder="Tell us about your weight loss goals or any questions you have..."
+                placeholder="Tell us about your goals or any questions you have..."
               ></textarea>
             </div>
 
@@ -172,8 +199,7 @@ const jsonLd = {
             </button>
 
             <p class="text-xs text-neutral-400">
-              By submitting this form, you agree to be contacted about our services. We respect your privacy
-              and will never share your information.
+              By submitting this form, you consent to be contacted by Weight Loss Knox about our services via phone, email, and SMS/text message. Message frequency may vary. Message and data rates may apply. Reply STOP to opt out of SMS at any time. Reply HELP for assistance. SMS consent is not shared with third parties. See our <a href="/privacy/" class="underline hover:text-neutral-600">Privacy Policy</a> and <a href="/terms/" class="underline hover:text-neutral-600">Terms & Conditions</a>.
             </p>
           </form>
         </div>
@@ -181,32 +207,41 @@ const jsonLd = {
 
       <!-- Contact Info Sidebar -->
       <div class="space-y-8">
-        <!-- Address -->
+        <!-- Bearden Location -->
         <div class="rounded-2xl bg-white p-6 shadow-sm border border-neutral-100">
-          <h3 class="font-serif text-lg font-bold text-primary">Office Location</h3>
+          <h3 class="font-serif text-lg font-bold text-primary">Bearden Location</h3>
           <address class="mt-3 text-sm not-italic leading-relaxed text-neutral-600">
-            {ADDRESS.street}<br />
-            {ADDRESS.suite}<br />
-            {ADDRESS.city}, {ADDRESS.state} {ADDRESS.zip}
+            {LOCATIONS.bearden.street}<br />
+            {LOCATIONS.bearden.suite}<br />
+            <span class="text-neutral-400 text-xs">{LOCATIONS.bearden.inside}</span><br />
+            {LOCATIONS.bearden.city}, {LOCATIONS.bearden.state} {LOCATIONS.bearden.zip}
           </address>
+          <a href={`tel:${LOCATIONS.bearden.phone.replace(/[^0-9+]/g, '')}`} class="mt-2 block text-sm text-primary hover:text-primary-light font-medium">
+            {LOCATIONS.bearden.phone}
+          </a>
         </div>
 
-        <!-- Phone & Email -->
+        <!-- Farragut Location -->
         <div class="rounded-2xl bg-white p-6 shadow-sm border border-neutral-100">
-          <h3 class="font-serif text-lg font-bold text-primary">Get in Touch</h3>
-          <div class="mt-3 space-y-3 text-sm">
-            <div>
-              <p class="font-medium text-neutral-700">Phone</p>
-              <a href={`tel:${PHONE.replace(/[^0-9+]/g, '')}`} class="text-primary hover:text-primary-light font-medium">
-                {PHONE}
-              </a>
-            </div>
-            <div>
-              <p class="font-medium text-neutral-700">Email</p>
-              <a href={`mailto:${EMAIL}`} class="text-primary hover:text-primary-light font-medium">
-                {EMAIL}
-              </a>
-            </div>
+          <h3 class="font-serif text-lg font-bold text-primary">Farragut Location</h3>
+          <address class="mt-3 text-sm not-italic leading-relaxed text-neutral-600">
+            {LOCATIONS.farragut.street}<br />
+            {LOCATIONS.farragut.suite}<br />
+            <span class="text-neutral-400 text-xs">{LOCATIONS.farragut.inside}</span><br />
+            {LOCATIONS.farragut.city}, {LOCATIONS.farragut.state} {LOCATIONS.farragut.zip}
+          </address>
+          <a href={`tel:${LOCATIONS.farragut.phone.replace(/[^0-9+]/g, '')}`} class="mt-2 block text-sm text-primary hover:text-primary-light font-medium">
+            {LOCATIONS.farragut.phone}
+          </a>
+        </div>
+
+        <!-- Email -->
+        <div class="rounded-2xl bg-white p-6 shadow-sm border border-neutral-100">
+          <h3 class="font-serif text-lg font-bold text-primary">Email</h3>
+          <div class="mt-3">
+            <a href={`mailto:${EMAIL}`} class="text-sm text-primary hover:text-primary-light font-medium">
+              {EMAIL}
+            </a>
           </div>
         </div>
 
@@ -236,36 +271,17 @@ const jsonLd = {
             Speak directly with our team to schedule your consultation or ask questions.
           </p>
           <a
-            href={`tel:${PHONE.replace(/[^0-9+]/g, '')}`}
+            href={`tel:${LOCATIONS.bearden.phone.replace(/[^0-9+]/g, '')}`}
             class="mt-4 inline-flex w-full items-center justify-center rounded-lg bg-white px-6 py-3 text-sm font-bold text-primary transition-colors hover:bg-neutral-100"
           >
-            Call {PHONE}
+            Bearden: {LOCATIONS.bearden.phone}
           </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Map Placeholder -->
-  <section class="bg-white px-4 py-16 sm:px-6 lg:px-8">
-    <div class="mx-auto max-w-6xl">
-      <h2 class="text-center font-serif text-2xl font-bold text-primary">Find Us</h2>
-      <p class="mt-2 text-center text-sm text-neutral-500">
-        Conveniently located in Knoxville, TN &mdash; serving Knox County, Farragut, Maryville, Oak Ridge, and surrounding communities.
-      </p>
-      <div class="mt-8 overflow-hidden rounded-2xl bg-neutral-100 border border-neutral-200" style="height: 400px;">
-        <!-- Replace with actual Google Maps embed -->
-        <div class="flex h-full items-center justify-center text-neutral-500">
-          <div class="text-center">
-            <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-neutral-200 text-neutral-400 mb-4">
-              <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-            </div>
-            <p class="text-sm font-medium">Google Maps Embed</p>
-            <p class="text-xs text-neutral-400 mt-1">1234 Medical Center Dr, Suite 200</p>
-          </div>
+          <a
+            href={`tel:${LOCATIONS.farragut.phone.replace(/[^0-9+]/g, '')}`}
+            class="mt-2 inline-flex w-full items-center justify-center rounded-lg bg-white/10 px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-white/20 border border-white/20"
+          >
+            Farragut: {LOCATIONS.farragut.phone}
+          </a>
         </div>
       </div>
     </div>

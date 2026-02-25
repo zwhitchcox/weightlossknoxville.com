@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE_TITLE, SITE_URL, EMAIL, LOCATIONS } from '../consts';
+---
+
+<BaseLayout
+  title="Terms & Conditions | Weight Loss Knox | Knoxville TN"
+  description="Terms & Conditions for Weight Loss Knox, including SMS Terms of Service, messaging policies, and website usage terms."
+>
+  <section class="relative overflow-hidden bg-primary-dark text-white px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <div class="absolute inset-0 opacity-10">
+      <svg class="h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <path d="M0 100 C 20 0 50 0 100 100 Z" fill="white" />
+      </svg>
+    </div>
+    <div class="relative mx-auto max-w-4xl text-center">
+      <h1 class="font-serif text-4xl font-bold leading-tight sm:text-5xl">Terms & Conditions</h1>
+      <p class="mx-auto mt-4 max-w-2xl text-lg text-neutral-300">
+        Please read these terms carefully before using our website or services.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-neutral-50 px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <div class="mx-auto max-w-3xl">
+      <div class="rounded-2xl bg-white p-8 sm:p-12 shadow-card border border-neutral-100 prose prose-neutral max-w-none">
+
+        <p class="text-sm text-neutral-500">Last updated: February 24, 2026</p>
+
+        <h2 class="font-serif text-2xl font-bold text-primary mt-8">1. Acceptance of Terms</h2>
+        <p>
+          By accessing and using the {SITE_TITLE} website (<a href={SITE_URL}>{SITE_URL}</a>) and our services, you agree to be bound by these Terms & Conditions. If you do not agree with any part of these terms, please do not use our website or services.
+        </p>
+
+        <h2 class="font-serif text-2xl font-bold text-primary mt-8">2. Services</h2>
+        <p>
+          {SITE_TITLE} provides physician-supervised medical weight loss services in Knoxville, TN, including but not limited to semaglutide and tirzepatide treatment programs, nutritional counseling, and body composition analysis. All medical services are provided under the supervision of licensed healthcare professionals.
+        </p>
+
+        <h2 class="font-serif text-2xl font-bold text-primary mt-8">3. Medical Disclaimer</h2>
+        <p>
+          The information provided on this website is for educational and informational purposes only and is not intended as medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified healthcare provider with any questions you may have regarding a medical condition. Never disregard professional medical advice or delay in seeking it because of something you have read on this website.
+        </p>
+
+        <h2 class="font-serif text-2xl font-bold text-primary mt-8">4. SMS Terms of Service</h2>
+        <p>
+          By opting into SMS from a web form or other medium, you are agreeing to receive SMS messages from {SITE_TITLE}. This includes SMS messages for conversations (external). The types of messages you may receive include:
+        </p>
+        <ul>
+          <li>Appointment reminders and confirmations</li>
+          <li>Account notifications</li>
+          <li>Treatment-related updates and follow-up communications</li>
+          <li>Responses to your inquiries</li>
+        </ul>
+
+        <div class="bg-neutral-50 border border-neutral-200 rounded-lg p-6 my-6">
+          <p class="font-semibold text-neutral-900 mb-3">Important SMS Disclosures:</p>
+          <ul class="mb-0">
+            <li><strong>Messaging frequency may vary.</strong></li>
+            <li><strong>Message and data rates may apply.</strong></li>
+            <li>To opt out at any time, text <strong>STOP</strong> to any message you receive from us.</li>
+            <li>For assistance, text <strong>HELP</strong> or visit our website at <a href={SITE_URL}>{SITE_URL}</a>.</li>
+            <li>Visit <a href={`${SITE_URL}/privacy/`}>{SITE_URL}/privacy/</a> for our privacy policy.</li>
+            <li>Visit <a href={`${SITE_URL}/terms/`}>{SITE_URL}/terms/</a> for these Terms of Service.</li>
+          </ul>
+        </div>
+
+        <p>
+          SMS consent and phone numbers are not shared with third parties or affiliates for marketing purposes.
+        </p>
+
+        <h2 class="font-serif text-2xl font-bold text-primary mt-8">5. User Responsibilities</h2>
+        <p>When using our website and services, you agree to:</p>
+        <ul>
+          <li>Provide accurate, current, and complete information when filling out forms or communicating with us.</li>
+          <li>Not use our website for any unlawful purpose or in violation of these terms.</li>
+          <li>Not attempt to gain unauthorized access to any part of our website or systems.</li>
+        </ul>
+
+        <h2 class="font-serif text-2xl font-bold text-primary mt-8">6. Intellectual Property</h2>
+        <p>
+          All content on this website, including text, graphics, logos, images, and software, is the property of {SITE_TITLE} or its content providers and is protected by applicable copyright and trademark laws. You may not reproduce, distribute, or create derivative works from any content without our prior written consent.
+        </p>
+
+        <h2 class="font-serif text-2xl font-bold text-primary mt-8">7. Limitation of Liability</h2>
+        <p>
+          To the fullest extent permitted by law, {SITE_TITLE} shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of your use of or inability to use our website or services. Our total liability for any claim arising from the use of our website shall not exceed the amount you paid to us, if any, during the six months preceding the claim.
+        </p>
+
+        <h2 class="font-serif text-2xl font-bold text-primary mt-8">8. Third-Party Links</h2>
+        <p>
+          Our website may contain links to third-party websites. We are not responsible for the content, privacy practices, or terms of any third-party websites. We encourage you to review the terms and privacy policies of any third-party sites you visit.
+        </p>
+
+        <h2 class="font-serif text-2xl font-bold text-primary mt-8">9. Changes to These Terms</h2>
+        <p>
+          We reserve the right to modify these Terms & Conditions at any time. Changes will be effective when posted on this page with an updated "Last updated" date. Your continued use of our website after changes are posted constitutes your acceptance of the revised terms.
+        </p>
+
+        <h2 class="font-serif text-2xl font-bold text-primary mt-8">10. Governing Law</h2>
+        <p>
+          These Terms & Conditions are governed by and construed in accordance with the laws of the State of Tennessee, without regard to conflict of law principles. Any disputes arising from these terms shall be subject to the exclusive jurisdiction of the courts located in Knox County, Tennessee.
+        </p>
+
+        <h2 class="font-serif text-2xl font-bold text-primary mt-8">11. Contact Us</h2>
+        <p>If you have any questions about these Terms & Conditions, please contact us:</p>
+        <ul>
+          <li><strong>Business Name:</strong> {SITE_TITLE}</li>
+          <li><strong>Bearden:</strong> {LOCATIONS.bearden.street}, {LOCATIONS.bearden.suite}, {LOCATIONS.bearden.city}, {LOCATIONS.bearden.state} {LOCATIONS.bearden.zip} &mdash; <a href={`tel:${LOCATIONS.bearden.phone.replace(/[^0-9+]/g, '')}`}>{LOCATIONS.bearden.phone}</a></li>
+          <li><strong>Farragut:</strong> {LOCATIONS.farragut.street}, {LOCATIONS.farragut.suite}, {LOCATIONS.farragut.city}, {LOCATIONS.farragut.state} {LOCATIONS.farragut.zip} &mdash; <a href={`tel:${LOCATIONS.farragut.phone.replace(/[^0-9+]/g, '')}`}>{LOCATIONS.farragut.phone}</a></li>
+          <li><strong>Email:</strong> <a href={`mailto:${EMAIL}`}>{EMAIL}</a></li>
+          <li><strong>Website:</strong> <a href={SITE_URL}>{SITE_URL}</a></li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
+</BaseLayout>

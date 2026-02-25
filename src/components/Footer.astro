@@ -1,5 +1,5 @@
 ---
-import { SITE_TITLE, PHONE, EMAIL, ADDRESS } from '../consts';
+import { SITE_TITLE, EMAIL, LOCATIONS } from '../consts';
 
 const currentYear = new Date().getFullYear();
 ---
@@ -7,7 +7,7 @@ const currentYear = new Date().getFullYear();
 <footer class="bg-neutral-900 text-neutral-300 font-sans">
   <!-- Main Footer Content -->
   <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-    <div class="grid gap-12 lg:grid-cols-4 lg:gap-8">
+    <div class="grid gap-12 lg:grid-cols-5 lg:gap-8">
       
       <!-- Brand & About -->
       <div class="lg:col-span-1">
@@ -20,7 +20,7 @@ const currentYear = new Date().getFullYear();
           <span class="font-serif text-2xl font-bold text-white tracking-tight">{SITE_TITLE}</span>
         </a>
         <p class="text-sm leading-relaxed text-neutral-400 mb-6">
-          Knoxville's premier medical weight loss clinic. Physician-supervised programs featuring FDA-approved tirzepatide and semaglutide to help you achieve lasting, healthy results.
+          Knoxville's premier medical weight loss and med spa clinic. Physician-supervised programs featuring semaglutide, tirzepatide, Botox, fillers, laser treatments, and more.
         </p>
         <div class="flex gap-4">
           <!-- Social Icons -->
@@ -55,52 +55,59 @@ const currentYear = new Date().getFullYear();
         <ul class="mt-4 space-y-3 text-sm">
           <li><a href="/tirzepatide/" class="hover:text-accent transition-colors block py-1">Tirzepatide (Mounjaro)</a></li>
           <li><a href="/semaglutide/" class="hover:text-accent transition-colors block py-1">Semaglutide (Wegovy)</a></li>
-          <li><a href="/services/" class="hover:text-accent transition-colors block py-1">Medical Consultations</a></li>
-          <li><a href="/services/" class="hover:text-accent transition-colors block py-1">Nutritional Counseling</a></li>
-          <li><a href="/services/" class="hover:text-accent transition-colors block py-1">Body Composition</a></li>
+          <li><a href="/services/" class="hover:text-accent transition-colors block py-1">Botox & Injectables</a></li>
+          <li><a href="/services/" class="hover:text-accent transition-colors block py-1">Laser Treatments</a></li>
+          <li><a href="/services/" class="hover:text-accent transition-colors block py-1">Chemical Peels</a></li>
         </ul>
       </div>
 
-      <!-- Contact Info -->
+      <!-- Bearden Location -->
       <div>
-        <h3 class="font-serif text-lg font-semibold text-white tracking-wide">Contact Us</h3>
-        <ul class="mt-4 space-y-4 text-sm">
-          <li class="flex items-start gap-3">
-            <div class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-neutral-800 text-primary-light">
-              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-              </svg>
-            </div>
-            <address class="not-italic text-neutral-400">
-              {ADDRESS.street}<br />
-              {ADDRESS.suite}<br />
-              {ADDRESS.city}, {ADDRESS.state} {ADDRESS.zip}
-            </address>
-          </li>
-          <li class="flex items-center gap-3">
-            <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-neutral-800 text-primary-light">
-              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
-              </svg>
-            </div>
-            <a href={`tel:${PHONE.replace(/[^0-9+]/g, '')}`} class="hover:text-white transition-colors">{PHONE}</a>
-          </li>
-          <li class="flex items-center gap-3">
-            <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-neutral-800 text-primary-light">
-              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-              </svg>
-            </div>
-            <a href={`mailto:${EMAIL}`} class="hover:text-white transition-colors">{EMAIL}</a>
-          </li>
-        </ul>
+        <h3 class="font-serif text-lg font-semibold text-white tracking-wide">Bearden Location</h3>
+        <div class="mt-4 space-y-3 text-sm">
+          <address class="not-italic text-neutral-400 leading-relaxed">
+            {LOCATIONS.bearden.street}<br />
+            {LOCATIONS.bearden.suite}<br />
+            <span class="text-neutral-500 text-xs">{LOCATIONS.bearden.inside}</span><br />
+            {LOCATIONS.bearden.city}, {LOCATIONS.bearden.state} {LOCATIONS.bearden.zip}
+          </address>
+          <a href={`tel:${LOCATIONS.bearden.phone.replace(/[^0-9+]/g, '')}`} class="hover:text-white transition-colors block">
+            {LOCATIONS.bearden.phone}
+          </a>
+        </div>
+      </div>
+
+      <!-- Farragut Location -->
+      <div>
+        <h3 class="font-serif text-lg font-semibold text-white tracking-wide">Farragut Location</h3>
+        <div class="mt-4 space-y-3 text-sm">
+          <address class="not-italic text-neutral-400 leading-relaxed">
+            {LOCATIONS.farragut.street}<br />
+            {LOCATIONS.farragut.suite}<br />
+            <span class="text-neutral-500 text-xs">{LOCATIONS.farragut.inside}</span><br />
+            {LOCATIONS.farragut.city}, {LOCATIONS.farragut.state} {LOCATIONS.farragut.zip}
+          </address>
+          <a href={`tel:${LOCATIONS.farragut.phone.replace(/[^0-9+]/g, '')}`} class="hover:text-white transition-colors block">
+            {LOCATIONS.farragut.phone}
+          </a>
+        </div>
       </div>
     </div>
 
-    <div class="mt-16 border-t border-neutral-800 pt-8">
+    <!-- Email -->
+    <div class="mt-8 text-sm text-neutral-400">
+      <a href={`mailto:${EMAIL}`} class="hover:text-white transition-colors">{EMAIL}</a>
+    </div>
+
+    <div class="mt-12 border-t border-neutral-800 pt-8">
       <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-neutral-500">
-        <p>&copy; {currentYear} {SITE_TITLE}. All rights reserved.</p>
+        <div>
+          <p>&copy; {currentYear} {SITE_TITLE}. All rights reserved.</p>
+          <div class="flex gap-4 mt-2">
+            <a href="/privacy/" class="hover:text-accent transition-colors">Privacy Policy</a>
+            <a href="/terms/" class="hover:text-accent transition-colors">Terms & Conditions</a>
+          </div>
+        </div>
         <p class="text-center md:text-right max-w-2xl">
           <span class="text-neutral-400 font-semibold block mb-1">Medical Disclaimer</span>
           The information provided on this website is for educational purposes only and is not intended to substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.

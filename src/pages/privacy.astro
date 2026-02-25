@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE_TITLE, SITE_URL, EMAIL, LOCATIONS } from '../consts';
+---
+
+<BaseLayout
+  title="Privacy Policy | Weight Loss Knox | Knoxville TN"
+  description="Privacy Policy for Weight Loss Knox. Learn how we collect, use, and protect your personal information including SMS consent policies."
+>
+  <section class="relative overflow-hidden bg-primary-dark text-white px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <div class="absolute inset-0 opacity-10">
+      <svg class="h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <path d="M0 100 C 20 0 50 0 100 100 Z" fill="white" />
+      </svg>
+    </div>
+    <div class="relative mx-auto max-w-4xl text-center">
+      <h1 class="font-serif text-4xl font-bold leading-tight sm:text-5xl">Privacy Policy</h1>
+      <p class="mx-auto mt-4 max-w-2xl text-lg text-neutral-300">
+        Your privacy is important to us. This policy explains how {SITE_TITLE} collects, uses, and protects your personal information.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-neutral-50 px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <div class="mx-auto max-w-3xl">
+      <div class="rounded-2xl bg-white p-8 sm:p-12 shadow-card border border-neutral-100 prose prose-neutral max-w-none">
+
+        <p class="text-sm text-neutral-500">Last updated: February 24, 2026</p>
+
+        <h2 class="font-serif text-2xl font-bold text-primary mt-8">1. Information We Collect</h2>
+        <p>
+          {SITE_TITLE} ("we," "us," or "our") collects personal information when you use our website, fill out forms, schedule consultations, or communicate with us. The types of personal information we may collect include:
+        </p>
+        <ul>
+          <li><strong>Contact Information:</strong> Name, email address, phone number, and mailing address.</li>
+          <li><strong>Health Information:</strong> Medical history, current medications, weight loss goals, and other health-related information you provide during consultations or via forms.</li>
+          <li><strong>Communication Data:</strong> Records of your communications with us, including phone calls, emails, SMS/text messages, and form submissions.</li>
+          <li><strong>Usage Data:</strong> Information about how you interact with our website, including IP address, browser type, pages visited, and referring URLs.</li>
+          <li><strong>Device Information:</strong> Device type, operating system, and unique device identifiers.</li>
+        </ul>
+
+        <h2 class="font-serif text-2xl font-bold text-primary mt-8">2. How We Use Your Information</h2>
+        <p>We use the personal information we collect for the following purposes:</p>
+        <ul>
+          <li>To schedule and manage medical weight loss consultations and appointments.</li>
+          <li>To provide physician-supervised weight loss treatment, including semaglutide and tirzepatide programs.</li>
+          <li>To communicate with you about your treatment plan, appointments, and account via phone, email, or SMS/text message.</li>
+          <li>To send appointment reminders, account notifications, and treatment-related updates.</li>
+          <li>To respond to your inquiries and provide customer support.</li>
+          <li>To improve our website, services, and patient experience.</li>
+          <li>To comply with legal and regulatory obligations.</li>
+        </ul>
+
+        <h2 class="font-serif text-2xl font-bold text-primary mt-8">3. How We Share Your Information</h2>
+        <p>We may share your personal information in the following limited circumstances:</p>
+        <ul>
+          <li><strong>Healthcare Providers:</strong> With physicians and medical staff involved in your treatment as necessary to provide care.</li>
+          <li><strong>Service Providers:</strong> With trusted third-party service providers who assist us in operating our website, processing payments, or delivering services, subject to confidentiality agreements.</li>
+          <li><strong>Legal Requirements:</strong> When required by law, regulation, legal process, or governmental request.</li>
+          <li><strong>Business Transfers:</strong> In connection with a merger, acquisition, or sale of assets, your information may be transferred as part of that transaction.</li>
+        </ul>
+        <p>We do not sell your personal information to third parties.</p>
+
+        <h2 class="font-serif text-2xl font-bold text-primary mt-8">4. SMS/Text Messaging Policy</h2>
+        <p>
+          By providing your phone number and opting in to receive SMS/text messages from {SITE_TITLE}, you consent to receive text messages related to your account, appointments, and services. These may include appointment reminders, account notifications, and treatment-related communications.
+        </p>
+        <p class="font-semibold">
+          SMS consent and phone numbers are not shared with third parties or affiliates for marketing purposes. SMS consent is not shared with third parties.
+        </p>
+        <ul>
+          <li>Messaging frequency may vary.</li>
+          <li>Message and data rates may apply.</li>
+          <li>To opt out of SMS messages at any time, reply <strong>STOP</strong> to any message.</li>
+          <li>For assistance, reply <strong>HELP</strong> or visit our website at <a href={SITE_URL}>{SITE_URL}</a>.</li>
+        </ul>
+
+        <h2 class="font-serif text-2xl font-bold text-primary mt-8">5. Data Security</h2>
+        <p>
+          We implement reasonable administrative, technical, and physical safeguards to protect your personal information from unauthorized access, use, alteration, or disclosure. However, no method of transmission over the Internet or electronic storage is 100% secure, and we cannot guarantee absolute security.
+        </p>
+
+        <h2 class="font-serif text-2xl font-bold text-primary mt-8">6. Cookies and Tracking Technologies</h2>
+        <p>
+          Our website may use cookies and similar tracking technologies to enhance your browsing experience, analyze website traffic, and understand how visitors interact with our site. You can control cookie preferences through your browser settings.
+        </p>
+
+        <h2 class="font-serif text-2xl font-bold text-primary mt-8">7. Your Rights</h2>
+        <p>Depending on your location, you may have the right to:</p>
+        <ul>
+          <li>Access the personal information we hold about you.</li>
+          <li>Request correction of inaccurate or incomplete information.</li>
+          <li>Request deletion of your personal information, subject to legal and regulatory requirements.</li>
+          <li>Opt out of receiving marketing communications.</li>
+        </ul>
+        <p>To exercise any of these rights, please contact us using the information below.</p>
+
+        <h2 class="font-serif text-2xl font-bold text-primary mt-8">8. Children's Privacy</h2>
+        <p>
+          Our services are not directed to individuals under the age of 18. We do not knowingly collect personal information from children. If you believe we have collected information from a child, please contact us immediately so we can take appropriate action.
+        </p>
+
+        <h2 class="font-serif text-2xl font-bold text-primary mt-8">9. Changes to This Policy</h2>
+        <p>
+          We may update this Privacy Policy from time to time. When we make changes, we will update the "Last updated" date at the top of this page. We encourage you to review this policy periodically to stay informed about how we protect your information.
+        </p>
+
+        <h2 class="font-serif text-2xl font-bold text-primary mt-8">10. Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy or our data practices, please contact us:</p>
+        <ul>
+          <li><strong>Business Name:</strong> {SITE_TITLE}</li>
+          <li><strong>Bearden:</strong> {LOCATIONS.bearden.street}, {LOCATIONS.bearden.suite}, {LOCATIONS.bearden.city}, {LOCATIONS.bearden.state} {LOCATIONS.bearden.zip} &mdash; <a href={`tel:${LOCATIONS.bearden.phone.replace(/[^0-9+]/g, '')}`}>{LOCATIONS.bearden.phone}</a></li>
+          <li><strong>Farragut:</strong> {LOCATIONS.farragut.street}, {LOCATIONS.farragut.suite}, {LOCATIONS.farragut.city}, {LOCATIONS.farragut.state} {LOCATIONS.farragut.zip} &mdash; <a href={`tel:${LOCATIONS.farragut.phone.replace(/[^0-9+]/g, '')}`}>{LOCATIONS.farragut.phone}</a></li>
+          <li><strong>Email:</strong> <a href={`mailto:${EMAIL}`}>{EMAIL}</a></li>
+          <li><strong>Website:</strong> <a href={SITE_URL}>{SITE_URL}</a></li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
+</BaseLayout>

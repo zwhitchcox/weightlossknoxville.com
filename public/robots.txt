@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://weightlossknoxville.com/sitemap-index.xml

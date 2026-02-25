@@ -1,0 +1,348 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_URL, PHONE, EMAIL, ADDRESS } from '../consts';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': SITE_URL,
+  name: SITE_TITLE,
+  description: SITE_DESCRIPTION,
+  url: SITE_URL,
+  telephone: PHONE,
+  email: EMAIL,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: `${ADDRESS.street}, ${ADDRESS.suite}`,
+    addressLocality: ADDRESS.city,
+    addressRegion: ADDRESS.state,
+    postalCode: ADDRESS.zip,
+    addressCountry: 'US',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: '35.9606',
+    longitude: '-83.9207',
+  },
+  areaServed: {
+    '@type': 'GeoCircle',
+    geoMidpoint: { '@type': 'GeoCoordinates', latitude: '35.9606', longitude: '-83.9207' },
+    geoRadius: '50000',
+  },
+  priceRange: '$$',
+  openingHoursSpecification: [
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday'], opens: '08:00', closes: '17:00' },
+  ],
+  medicalSpecialty: 'Bariatric Medicine',
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Weight Loss Services',
+    itemListElement: [
+      { '@type': 'Offer', itemOffered: { '@type': 'MedicalTherapy', name: 'Tirzepatide Treatment' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'MedicalTherapy', name: 'Semaglutide Treatment' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'MedicalProcedure', name: 'Body Composition Analysis' } },
+    ],
+  },
+};
+
+const stats = [
+  { value: '15-22%', label: 'Average Weight Loss' },
+  { value: '1,000+', label: 'Patients Treated' },
+  { value: '100%', label: 'Physician Supervised' },
+  { value: '24/7', label: 'Patient Support' },
+];
+
+const features = [
+  {
+    title: 'Board-Certified Physicians',
+    description: 'Your health is managed by experts in metabolic medicine, not just general practitioners.',
+    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>`
+  },
+  {
+    title: 'FDA-Approved Medications',
+    description: 'We prescribe genuine tirzepatide and semaglutide from regulated US pharmacies.',
+    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM4 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 0110.374 21c-2.331 0-4.512-.645-6.374-1.766z" /></svg>`
+  },
+  {
+    title: 'Personalized Nutrition',
+    description: 'Medication is a tool. We teach you how to eat for sustained results after treatment.',
+    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>`
+  },
+  {
+    title: 'No Hidden Fees',
+    description: 'Transparent pricing for consultations and medication. No surprise bills.',
+    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`
+  }
+];
+---
+
+<BaseLayout
+  title="Medical Weight Loss Knoxville TN | Tirzepatide & Semaglutide"
+  description="Physician-supervised medical weight loss in Knoxville, TN. FDA-approved tirzepatide and semaglutide treatments with personalized plans and ongoing support."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-primary-dark via-primary to-primary-light">
+    <!-- Abstract Background Pattern -->
+    <div class="absolute inset-0 opacity-10">
+      <svg class="h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <path d="M0 100 C 20 0 50 0 100 100 Z" fill="white" />
+      </svg>
+    </div>
+    
+    <div class="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
+      <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div class="max-w-2xl text-center lg:text-left">
+          <div class="inline-flex items-center rounded-full bg-accent/20 px-4 py-1.5 text-sm font-semibold text-accent-light mb-6 backdrop-blur-sm border border-accent/20">
+            <span class="mr-2 h-2 w-2 rounded-full bg-accent animate-pulse"></span>
+            Accepting New Patients in Knoxville
+          </div>
+          <h1 class="font-serif text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl tracking-tight">
+            Scientific Weight Loss,<br />
+            <span class="text-accent">Lasting Results.</span>
+          </h1>
+          <p class="mt-6 text-lg leading-relaxed text-neutral-200">
+            Knoxville's premier physician-supervised weight loss clinic. We combine FDA-approved medications like 
+            <strong class="text-white">Tirzepatide</strong> and <strong class="text-white">Semaglutide</strong> 
+            with personalized nutrition to help you reclaim your health.
+          </p>
+          <div class="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
+            <a
+              href="/contact/"
+              class="inline-flex items-center justify-center rounded-xl bg-accent px-8 py-4 text-base font-bold text-primary-dark shadow-xl transition-all hover:bg-accent-light hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-primary-dark"
+            >
+              Book Consultation
+            </a>
+            <a
+              href="/services/"
+              class="inline-flex items-center justify-center rounded-xl bg-white/10 px-8 py-4 text-base font-bold text-white backdrop-blur-sm transition-all hover:bg-white/20 hover:-translate-y-1 border border-white/20"
+            >
+              View Services
+            </a>
+          </div>
+          
+          <div class="mt-10 flex items-center justify-center gap-6 lg:justify-start text-sm text-neutral-300">
+            <div class="flex items-center gap-2">
+              <svg class="h-5 w-5 text-accent" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              <span>Board Certified</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="h-5 w-5 text-accent" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              <span>FDA Approved</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Hero Visual/Form Placeholder -->
+        <div class="relative hidden lg:block">
+          <div class="relative rounded-2xl bg-white/5 p-2 backdrop-blur-sm border border-white/10 shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500">
+             <div class="aspect-[4/3] rounded-xl bg-gradient-to-br from-neutral-800 to-neutral-900 flex items-center justify-center overflow-hidden">
+                <!-- Abstract Representation of Medical Precision -->
+                <div class="relative w-full h-full">
+                  <svg class="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <path d="M0 100 C 50 50 50 50 100 0" stroke="url(#gradient)" stroke-width="0.5" fill="none"/>
+                    <defs>
+                      <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#D4AF37" />
+                        <stop offset="100%" stop-color="#064E3B" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                  <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+                    <p class="text-5xl font-serif font-bold text-white mb-2">20%</p>
+                    <p class="text-sm text-neutral-400 uppercase tracking-widest">Avg. Weight Loss</p>
+                  </div>
+                </div>
+             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Grid -->
+  <section class="py-16 sm:py-24 bg-neutral-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        {features.map((feature) => (
+          <div class="relative rounded-2xl bg-white p-8 shadow-sm transition-all hover:shadow-md hover:-translate-y-1 border border-neutral-100">
+            <div class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary mb-6" set:html={feature.icon} />
+            <h3 class="font-serif text-xl font-bold text-neutral-900 mb-3">{feature.title}</h3>
+            <p class="text-neutral-600 leading-relaxed text-sm">
+              {feature.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content / Services -->
+  <section class="py-20 sm:py-32 bg-white overflow-hidden">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="font-serif text-3xl font-bold text-primary sm:text-4xl lg:text-5xl mb-6">Advanced Medical Weight Loss Solutions</h2>
+        <p class="text-lg text-neutral-600 leading-relaxed">
+          We don't believe in one-size-fits-all. Our treatments are tailored to your biology, lifestyle, and goals using the most effective medications available.
+        </p>
+      </div>
+
+      <div class="grid gap-12 lg:grid-cols-2 items-center">
+        <!-- Tirzepatide Card -->
+        <div class="group relative rounded-3xl bg-neutral-50 p-2 transition-all hover:bg-neutral-100">
+          <div class="relative h-full rounded-2xl bg-white p-8 shadow-card border border-neutral-100 overflow-hidden">
+            <div class="absolute top-0 right-0 -mt-4 -mr-4 h-24 w-24 rounded-full bg-accent/10 blur-2xl transition-all group-hover:bg-accent/20"></div>
+            
+            <span class="inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary mb-4">Most Effective</span>
+            <h3 class="font-serif text-3xl font-bold text-neutral-900 mb-2">Tirzepatide</h3>
+            <p class="text-sm font-medium text-neutral-500 mb-6 uppercase tracking-wider">Mounjaro &bull; Zepbound</p>
+            
+            <p class="text-neutral-600 mb-8 leading-relaxed">
+              The breakthrough dual-action treatment that targets both GLP-1 and GIP receptors. Clinical trials show unprecedented weight loss results averaging 22.5%.
+            </p>
+            
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-center text-neutral-700">
+                <svg class="h-5 w-5 text-accent mr-3" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                Up to 22.5% body weight loss
+              </li>
+              <li class="flex items-center text-neutral-700">
+                <svg class="h-5 w-5 text-accent mr-3" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                Regulates appetite & cravings
+              </li>
+              <li class="flex items-center text-neutral-700">
+                <svg class="h-5 w-5 text-accent mr-3" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                Improves metabolic health
+              </li>
+            </ul>
+            
+            <a href="/tirzepatide/" class="inline-flex w-full items-center justify-center rounded-lg border-2 border-primary bg-transparent px-6 py-3 text-base font-semibold text-primary transition-all hover:bg-primary hover:text-white">
+              Learn About Tirzepatide
+            </a>
+          </div>
+        </div>
+
+        <!-- Semaglutide Card -->
+        <div class="group relative rounded-3xl bg-neutral-50 p-2 transition-all hover:bg-neutral-100">
+          <div class="relative h-full rounded-2xl bg-white p-8 shadow-card border border-neutral-100 overflow-hidden">
+            <div class="absolute top-0 right-0 -mt-4 -mr-4 h-24 w-24 rounded-full bg-primary/5 blur-2xl transition-all group-hover:bg-primary/10"></div>
+            
+            <span class="inline-block rounded-full bg-neutral-100 px-3 py-1 text-xs font-semibold text-neutral-600 mb-4">Proven Standard</span>
+            <h3 class="font-serif text-3xl font-bold text-neutral-900 mb-2">Semaglutide</h3>
+            <p class="text-sm font-medium text-neutral-500 mb-6 uppercase tracking-wider">Wegovy &bull; Ozempic</p>
+            
+            <p class="text-neutral-600 mb-8 leading-relaxed">
+              The FDA-approved GLP-1 receptor agonist that revolutionized medical weight loss. Proven safe and effective with additional cardiovascular benefits.
+            </p>
+            
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-center text-neutral-700">
+                <svg class="h-5 w-5 text-accent mr-3" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                Average 15% weight loss
+              </li>
+              <li class="flex items-center text-neutral-700">
+                <svg class="h-5 w-5 text-accent mr-3" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                Cardiovascular protection
+              </li>
+              <li class="flex items-center text-neutral-700">
+                <svg class="h-5 w-5 text-accent mr-3" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                Trusted safety profile
+              </li>
+            </ul>
+            
+            <a href="/semaglutide/" class="inline-flex w-full items-center justify-center rounded-lg border-2 border-primary bg-transparent px-6 py-3 text-base font-semibold text-primary transition-all hover:bg-primary hover:text-white">
+              Learn About Semaglutide
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process / How It Works -->
+  <section class="py-20 sm:py-32 bg-neutral-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-20">
+        <h2 class="font-serif text-3xl font-bold text-primary sm:text-4xl mb-6">Your Path to Success</h2>
+        <p class="text-lg text-neutral-600">
+          We've streamlined our process to get you started safely and quickly. No jumping through hoops—just expert medical care.
+        </p>
+      </div>
+
+      <div class="relative">
+        <!-- Connecting Line (Desktop) -->
+        <div class="absolute top-1/2 left-0 w-full h-0.5 bg-neutral-200 -translate-y-1/2 hidden md:block z-0"></div>
+        
+        <div class="grid gap-12 md:grid-cols-3 relative z-10">
+          <!-- Step 1 -->
+          <div class="text-center bg-neutral-50 px-4">
+            <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl bg-white shadow-md border border-neutral-100 mb-8 relative">
+              <span class="font-serif text-3xl font-bold text-primary">1</span>
+              <div class="absolute -bottom-2 -right-2 h-8 w-8 rounded-full bg-accent flex items-center justify-center text-white">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" /></svg>
+              </div>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-neutral-900 mb-3">Consultation</h3>
+            <p class="text-neutral-600 leading-relaxed">
+              Book your comprehensive evaluation. We review your health history, labs, and goals to ensure safety.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="text-center bg-neutral-50 px-4">
+            <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl bg-white shadow-md border border-neutral-100 mb-8 relative">
+              <span class="font-serif text-3xl font-bold text-primary">2</span>
+              <div class="absolute -bottom-2 -right-2 h-8 w-8 rounded-full bg-accent flex items-center justify-center text-white">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg>
+              </div>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-neutral-900 mb-3">Custom Plan</h3>
+            <p class="text-neutral-600 leading-relaxed">
+              Receive your personalized prescription and nutrition plan. We teach you how to administer medication confidently.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="text-center bg-neutral-50 px-4">
+            <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl bg-white shadow-md border border-neutral-100 mb-8 relative">
+              <span class="font-serif text-3xl font-bold text-primary">3</span>
+              <div class="absolute -bottom-2 -right-2 h-8 w-8 rounded-full bg-accent flex items-center justify-center text-white">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+              </div>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-neutral-900 mb-3">Ongoing Support</h3>
+            <p class="text-neutral-600 leading-relaxed">
+              Regular check-ins to monitor progress, adjust dosages, and celebrate your wins. We're partners in your journey.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-16 bg-primary-dark text-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 gap-8 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-white/10">
+        {stats.map((stat) => (
+          <div class="text-center pt-8 md:pt-0">
+            <p class="font-serif text-4xl font-bold text-accent mb-2">{stat.value}</p>
+            <p class="text-neutral-400 text-sm tracking-wide uppercase">{stat.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <CTA
+    heading="Ready to Transform Your Health?"
+    text="Don't wait another day. Schedule your consultation with our Knoxville medical team and discover what's possible."
+    buttonText="Book Your Consultation"
+    buttonHref="/contact/"
+  />
+</BaseLayout>

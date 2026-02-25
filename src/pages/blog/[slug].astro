@@ -1,0 +1,225 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection("blog");
+  const publishedPosts = allPosts
+    .filter((post) => !post.data.draft)
+    .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+  return publishedPosts.map((post, index) => ({
+    params: { slug: post.id },
+    props: {
+      post,
+      prevPost: publishedPosts[index + 1] ?? null,
+      nextPost: publishedPosts[index - 1] ?? null,
+    },
+  }));
+}
+
+const { post, prevPost, nextPost } = Astro.props;
+const { Content } = await render(post);
+
+const formattedDate = post.data.pubDate.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+
+const updatedDateFormatted = post.data.updatedDate
+  ? post.data.updatedDate.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    })
+  : null;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: post.data.title,
+  description: post.data.description,
+  author: {
+    "@type": "Organization",
+    name: post.data.author,
+    url: "https://weightlossknoxville.com",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Weight Loss Knox",
+    url: "https://weightlossknoxville.com",
+  },
+  datePublished: post.data.pubDate.toISOString(),
+  ...(post.data.updatedDate && {
+    dateModified: post.data.updatedDate.toISOString(),
+  }),
+  ...(post.data.heroImage && { image: post.data.heroImage }),
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": `https://weightlossknoxville.com/blog/${post.id}`,
+  },
+};
+---
+
+<BaseLayout
+  title={`${post.data.title} | Weight Loss Knox Blog`}
+  description={post.data.description}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+  <article class="py-16 md:py-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Header -->
+      <header class="mb-10">
+        <a
+          href="/blog"
+          class="inline-flex items-center text-[#2D7A5F] hover:text-[#1B4D3E] font-medium mb-6 transition-colors"
+        >
+          <svg
+            class="w-4 h-4 mr-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"></path>
+          </svg>
+          Back to Blog
+        </a>
+
+        <h1
+          class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1B4D3E] mb-4 leading-tight"
+        >
+          {post.data.title}
+        </h1>
+
+        <div class="flex flex-wrap items-center gap-4 text-gray-500 text-sm">
+          <span class="flex items-center gap-1.5">
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+              ></path>
+            </svg>
+            <time datetime={post.data.pubDate.toISOString()}>
+              {formattedDate}
+            </time>
+          </span>
+
+          {
+            updatedDateFormatted && (
+              <span class="text-gray-400">
+                (Updated {updatedDateFormatted})
+              </span>
+            )
+          }
+
+          <span class="flex items-center gap-1.5">
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+              ></path>
+            </svg>
+            {post.data.author}
+          </span>
+        </div>
+
+        {
+          post.data.tags && post.data.tags.length > 0 && (
+            <div class="flex flex-wrap gap-2 mt-4">
+              {post.data.tags.map((tag) => (
+                <span class="inline-block bg-[#1B4D3E]/10 text-[#1B4D3E] text-xs font-medium px-3 py-1 rounded-full">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )
+        }
+      </header>
+
+      {
+        post.data.heroImage && (
+          <img
+            src={post.data.heroImage}
+            alt={post.data.title}
+            class="w-full rounded-xl mb-10 shadow-md"
+          />
+        )
+      }
+
+      <!-- Post Content -->
+      <div
+        class="prose prose-lg max-w-none
+          prose-headings:text-[#1B4D3E] prose-headings:font-bold
+          prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
+          prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
+          prose-p:text-gray-700 prose-p:leading-relaxed
+          prose-a:text-[#2D7A5F] prose-a:font-medium hover:prose-a:text-[#1B4D3E]
+          prose-strong:text-[#1B4D3E]
+          prose-ul:text-gray-700 prose-ol:text-gray-700
+          prose-li:marker:text-[#C8A96E]
+          prose-blockquote:border-l-[#C8A96E] prose-blockquote:text-gray-600"
+      >
+        <Content />
+      </div>
+
+      <!-- Prev/Next Navigation -->
+      <nav class="mt-16 pt-8 border-t border-gray-200">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {
+            prevPost ? (
+              <a
+                href={`/blog/${prevPost.id}`}
+                class="group flex flex-col p-5 rounded-xl border border-gray-200 hover:border-[#2D7A5F] hover:shadow-md transition-all"
+              >
+                <span class="text-sm text-gray-400 mb-1">
+                  &larr; Previous Post
+                </span>
+                <span class="text-[#1B4D3E] font-semibold group-hover:text-[#2D7A5F] transition-colors">
+                  {prevPost.data.title}
+                </span>
+              </a>
+            ) : (
+              <div />
+            )
+          }
+
+          {
+            nextPost && (
+              <a
+                href={`/blog/${nextPost.id}`}
+                class="group flex flex-col items-end text-right p-5 rounded-xl border border-gray-200 hover:border-[#2D7A5F] hover:shadow-md transition-all md:col-start-2"
+              >
+                <span class="text-sm text-gray-400 mb-1">
+                  Next Post &rarr;
+                </span>
+                <span class="text-[#1B4D3E] font-semibold group-hover:text-[#2D7A5F] transition-colors">
+                  {nextPost.data.title}
+                </span>
+              </a>
+            )
+          }
+        </div>
+      </nav>
+    </div>
+  </article>
+</BaseLayout>

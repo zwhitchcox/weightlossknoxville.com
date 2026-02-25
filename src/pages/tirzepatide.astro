@@ -1,0 +1,383 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import { SITE_TITLE, SITE_URL, PHONE } from '../consts';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalWebPage',
+  name: 'Tirzepatide Weight Loss Treatment in Knoxville, TN',
+  description: 'Comprehensive guide to tirzepatide (Mounjaro/Zepbound) for medical weight loss at Weight Loss Knox in Knoxville, TN. Learn about benefits, candidacy, treatment process, and expected results.',
+  url: `${SITE_URL}/tirzepatide/`,
+  lastReviewed: new Date().toISOString().split('T')[0],
+  medicalAudience: {
+    '@type': 'MedicalAudience',
+    audienceType: 'Patient',
+  },
+  mainContentOfPage: {
+    '@type': 'WebPageElement',
+    about: {
+      '@type': 'Drug',
+      name: 'Tirzepatide',
+      alternateName: ['Mounjaro', 'Zepbound'],
+      drugClass: 'GLP-1/GIP Receptor Agonist',
+      administrationRoute: 'Subcutaneous injection',
+      dosageForm: 'Pre-filled injection pen',
+      mechanismOfAction: 'Dual GLP-1 and GIP receptor agonist that reduces appetite, slows gastric emptying, and improves insulin sensitivity',
+    },
+  },
+};
+---
+
+<BaseLayout
+  title="Tirzepatide Weight Loss Treatment | Knoxville TN | Weight Loss Knox"
+  description="Learn about tirzepatide for medical weight loss in Knoxville, TN. Dual GLP-1/GIP agonist showing up to 22.5% body weight reduction. Board-certified physicians at Weight Loss Knox."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-primary-dark text-white">
+    <!-- Abstract Pattern -->
+    <div class="absolute inset-0 opacity-10">
+      <svg class="h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <path d="M0 100 C 20 0 50 0 100 100 Z" fill="white" />
+      </svg>
+    </div>
+    
+    <div class="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div>
+          <div class="inline-flex items-center rounded-full bg-accent/20 px-3 py-1 text-xs font-semibold text-accent-light mb-6 border border-accent/20">
+            FDA-Approved Treatment
+          </div>
+          <h1 class="font-serif text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
+            Tirzepatide for <br/><span class="text-accent">Medical Weight Loss</span>
+          </h1>
+          <p class="mt-6 text-lg leading-relaxed text-neutral-300 max-w-2xl">
+            The most effective FDA-approved weight loss medication available, now offered at Weight Loss Knox. 
+            Experience the dual-action power of Mounjaro® and Zepbound®.
+          </p>
+          <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+            <a href="/contact/" class="inline-flex items-center justify-center rounded-xl bg-accent px-8 py-3.5 text-base font-bold text-primary-dark shadow-lg transition-transform hover:bg-accent-light hover:-translate-y-1">
+              Book Consultation
+            </a>
+            <a href="#how-it-works" class="inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/5 px-8 py-3.5 text-base font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10">
+              How It Works
+            </a>
+          </div>
+        </div>
+        
+        <!-- Stats/Visual -->
+        <div class="hidden lg:grid grid-cols-2 gap-4">
+          <div class="rounded-2xl bg-white/5 p-6 backdrop-blur-sm border border-white/10">
+            <p class="font-serif text-3xl font-bold text-accent">22.5%</p>
+            <p class="text-sm text-neutral-400 mt-1">Average Weight Loss</p>
+          </div>
+          <div class="rounded-2xl bg-white/5 p-6 backdrop-blur-sm border border-white/10">
+            <p class="font-serif text-3xl font-bold text-accent">Dual</p>
+            <p class="text-sm text-neutral-400 mt-1">GLP-1 + GIP Action</p>
+          </div>
+          <div class="rounded-2xl bg-white/5 p-6 backdrop-blur-sm border border-white/10">
+            <p class="font-serif text-3xl font-bold text-accent">Weekly</p>
+            <p class="text-sm text-neutral-400 mt-1">Simple Injection</p>
+          </div>
+          <div class="rounded-2xl bg-white/5 p-6 backdrop-blur-sm border border-white/10">
+            <p class="font-serif text-3xl font-bold text-accent">FDA</p>
+            <p class="text-sm text-neutral-400 mt-1">Proven Safety Profile</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="bg-neutral-50 py-12 sm:py-16 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-3">
+        
+        <!-- Sidebar Navigation (Sticky) -->
+        <div class="hidden lg:block lg:col-span-1">
+          <div class="sticky top-24 space-y-8">
+            <nav class="rounded-xl bg-white p-6 shadow-sm border border-neutral-100">
+              <h3 class="font-serif text-lg font-bold text-primary mb-4">On This Page</h3>
+              <ul class="space-y-3 text-sm">
+                <li><a href="#what-is-tirzepatide" class="block text-neutral-600 hover:text-primary transition-colors">What Is Tirzepatide?</a></li>
+                <li><a href="#how-it-works" class="block text-neutral-600 hover:text-primary transition-colors">How It Works</a></li>
+                <li><a href="#clinical-results" class="block text-neutral-600 hover:text-primary transition-colors">Clinical Results</a></li>
+                <li><a href="#benefits" class="block text-neutral-600 hover:text-primary transition-colors">Benefits</a></li>
+                <li><a href="#candidacy" class="block text-neutral-600 hover:text-primary transition-colors">Am I a Candidate?</a></li>
+                <li><a href="#process" class="block text-neutral-600 hover:text-primary transition-colors">Treatment Process</a></li>
+                <li><a href="#side-effects" class="block text-neutral-600 hover:text-primary transition-colors">Side Effects</a></li>
+                <li><a href="#comparison" class="block text-neutral-600 hover:text-primary transition-colors">Tirzepatide vs Semaglutide</a></li>
+                <li><a href="#faq" class="block text-neutral-600 hover:text-primary transition-colors">FAQ</a></li>
+              </ul>
+            </nav>
+            
+            <div class="rounded-xl bg-primary p-6 text-white shadow-lg">
+              <h3 class="font-serif text-lg font-bold mb-2">Ready to Start?</h3>
+              <p class="text-sm text-primary-light/90 mb-4">Schedule your consultation with our Knoxville medical team today.</p>
+              <a href="/contact/" class="block w-full rounded-lg bg-white py-3 text-center text-sm font-bold text-primary hover:bg-neutral-100 transition-colors">
+                Book Consultation
+              </a>
+              <a href={`tel:${PHONE.replace(/[^0-9+]/g, '')}`} class="block w-full mt-3 text-center text-sm font-medium text-white/80 hover:text-white transition-colors">
+                Call {PHONE}
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="lg:col-span-2">
+          <div class="prose max-w-none">
+            
+            <!-- Key Takeaways Box -->
+            <div class="not-prose rounded-xl bg-accent/10 border border-accent/20 p-6 mb-10">
+              <h3 class="font-serif text-xl font-bold text-primary-dark mb-3 flex items-center gap-2">
+                <svg class="w-5 h-5 text-accent-dark" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" /></svg>
+                Key Takeaways
+              </h3>
+              <ul class="space-y-2 text-neutral-700 text-sm">
+                <li class="flex items-start gap-2">
+                  <span class="text-accent-dark font-bold">•</span>
+                  <span><strong>Dual Action:</strong> Targets both GLP-1 and GIP receptors for superior results.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-accent-dark font-bold">•</span>
+                  <span><strong>Highest Efficacy:</strong> Up to 22.5% body weight loss in clinical trials.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-accent-dark font-bold">•</span>
+                  <span><strong>Comprehensive Benefits:</strong> Improves blood sugar, cholesterol, and blood pressure.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-accent-dark font-bold">•</span>
+                  <span><strong>Convenient:</strong> Once-weekly injection.</span>
+                </li>
+              </ul>
+            </div>
+
+            <h2 id="what-is-tirzepatide">What Is Tirzepatide?</h2>
+            <p>
+              Tirzepatide is a first-in-class dual GLP-1 and GIP receptor agonist that has rapidly become the
+              most discussed and sought-after treatment in medical weight loss. Originally developed by Eli Lilly,
+              it is marketed as <strong>Mounjaro</strong> for type 2 diabetes and <strong>Zepbound</strong> for
+              chronic weight management. Tirzepatide received FDA approval for weight loss in November 2023,
+              following landmark clinical trial results.
+            </p>
+            <p>
+              Unlike previous weight loss medications that target a single hormonal pathway, tirzepatide works
+              on two incretin hormones simultaneously: GLP-1 (glucagon-like peptide-1) and GIP (glucose-dependent
+              insulinotropic polypeptide). This dual mechanism of action is what makes tirzepatide significantly
+              more effective than single-pathway treatments.
+            </p>
+
+            <h2 id="how-it-works">How Does Tirzepatide Work?</h2>
+            <p>
+              To understand tirzepatide, it helps to understand the incretin hormones it mimics. When you eat,
+              your gut releases GLP-1 and GIP, two hormones that play important roles in metabolism:
+            </p>
+            <ul>
+              <li><strong>GLP-1 (Glucagon-Like Peptide-1)</strong> signals the brain to reduce hunger, slows the
+                rate at which food leaves the stomach (gastric emptying), and stimulates insulin release from the
+                pancreas. This leads to reduced appetite, earlier fullness after meals, and improved blood sugar control.</li>
+              <li><strong>GIP (Glucose-Dependent Insulinotropic Polypeptide)</strong> enhances insulin secretion,
+                promotes fat metabolism, and works synergistically with GLP-1 to amplify appetite suppression and
+                metabolic improvements.</li>
+            </ul>
+            <p>
+              Tirzepatide is a synthetic molecule that activates both the GLP-1 and GIP receptors with high
+              affinity. By targeting both pathways, it produces more pronounced effects on appetite, metabolism,
+              and body composition than GLP-1-only medications like semaglutide. The medication is administered
+              as a once-weekly subcutaneous injection, typically in the abdomen, thigh, or upper arm.
+            </p>
+
+            <h2 id="clinical-results">Clinical Trial Results</h2>
+            <p>
+              Tirzepatide's efficacy has been demonstrated in multiple large-scale clinical trials. The most
+              significant for weight loss are the <strong>SURMOUNT</strong> trial series:
+            </p>
+
+            <h3>SURMOUNT-1 Trial</h3>
+            <p>
+              This pivotal trial enrolled over 2,500 adults with obesity or overweight with at least one
+              weight-related condition (excluding diabetes). Over 72 weeks of treatment:
+            </p>
+            <ul>
+              <li>Participants on the highest dose (15 mg) lost an average of <strong>22.5% of their body weight</strong></li>
+              <li>The 10 mg dose produced an average of <strong>19.5% body weight loss</strong></li>
+              <li>The 5 mg dose produced an average of <strong>15% body weight loss</strong></li>
+              <li>Over <strong>one-third</strong> of participants on the highest dose lost 25% or more of their body weight</li>
+            </ul>
+
+            <h2 id="benefits">Benefits of Tirzepatide Treatment</h2>
+            <p>
+              The benefits of tirzepatide extend well beyond the number on the scale. Patients at our
+              Knoxville clinic commonly experience:
+            </p>
+            <div class="grid sm:grid-cols-2 gap-4 not-prose my-8">
+              <div class="flex items-start gap-3 p-4 rounded-lg bg-white border border-neutral-100 shadow-sm">
+                <svg class="w-6 h-6 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <span class="text-sm text-neutral-700">Significant fat loss while preserving lean muscle</span>
+              </div>
+              <div class="flex items-start gap-3 p-4 rounded-lg bg-white border border-neutral-100 shadow-sm">
+                <svg class="w-6 h-6 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <span class="text-sm text-neutral-700">Improved blood sugar levels</span>
+              </div>
+              <div class="flex items-start gap-3 p-4 rounded-lg bg-white border border-neutral-100 shadow-sm">
+                <svg class="w-6 h-6 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <span class="text-sm text-neutral-700">Lower blood pressure & better cholesterol</span>
+              </div>
+              <div class="flex items-start gap-3 p-4 rounded-lg bg-white border border-neutral-100 shadow-sm">
+                <svg class="w-6 h-6 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <span class="text-sm text-neutral-700">Reduced visceral (abdominal) fat</span>
+              </div>
+              <div class="flex items-start gap-3 p-4 rounded-lg bg-white border border-neutral-100 shadow-sm">
+                <svg class="w-6 h-6 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <span class="text-sm text-neutral-700">Better sleep quality</span>
+              </div>
+              <div class="flex items-start gap-3 p-4 rounded-lg bg-white border border-neutral-100 shadow-sm">
+                <svg class="w-6 h-6 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <span class="text-sm text-neutral-700">Decreased joint pain & improved mobility</span>
+              </div>
+            </div>
+
+            <h2 id="candidacy">Who Is a Candidate for Tirzepatide?</h2>
+            <p>
+              At Weight Loss Knox, our physicians evaluate each patient individually to determine whether
+              tirzepatide is appropriate. Generally, candidates for tirzepatide include adults who meet the
+              following criteria:
+            </p>
+            <ul>
+              <li>BMI of 30 or greater (obesity), or</li>
+              <li>BMI of 27 or greater (overweight) with at least one weight-related health condition such
+                as type 2 diabetes, high blood pressure, high cholesterol, or obstructive sleep apnea</li>
+              <li>Previous unsuccessful attempts at weight loss through diet and exercise alone</li>
+              <li>No contraindications to GLP-1/GIP therapy</li>
+            </ul>
+
+            <h2 id="process">Treatment Process at Weight Loss Knox</h2>
+            <div class="not-prose space-y-8 my-8">
+              <div class="flex gap-6">
+                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg">1</div>
+                <div>
+                  <h3 class="font-serif text-xl font-bold text-neutral-900 mb-2">Initial Consultation</h3>
+                  <p class="text-neutral-600 text-sm leading-relaxed">
+                    Comprehensive health assessment including medical history, physical exam, and lab work (metabolic panel, thyroid function, lipid panel, HbA1c) to ensure safety.
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-6">
+                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg">2</div>
+                <div>
+                  <h3 class="font-serif text-xl font-bold text-neutral-900 mb-2">Treatment Initiation</h3>
+                  <p class="text-neutral-600 text-sm leading-relaxed">
+                    Start at a low dose (2.5 mg) for 4 weeks to minimize side effects. We teach you proper injection technique for confident self-administration.
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-6">
+                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg">3</div>
+                <div>
+                  <h3 class="font-serif text-xl font-bold text-neutral-900 mb-2">Dose Titration</h3>
+                  <p class="text-neutral-600 text-sm leading-relaxed">
+                    Every 4 weeks, we evaluate your progress and may increase the dose (up to 15 mg) to maximize weight loss results based on your tolerance.
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-6">
+                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg">4</div>
+                <div>
+                  <h3 class="font-serif text-xl font-bold text-neutral-900 mb-2">Ongoing Monitoring</h3>
+                  <p class="text-neutral-600 text-sm leading-relaxed">
+                    Regular visits to track body composition, adjust nutrition plans, and ensure you are meeting your health goals safely.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <h2 id="comparison">Tirzepatide vs. Semaglutide</h2>
+            <div class="not-prose overflow-hidden rounded-xl border border-neutral-200 shadow-sm my-8">
+              <table class="w-full text-left text-sm">
+                <thead class="bg-neutral-50">
+                  <tr>
+                    <th class="px-6 py-4 font-bold text-neutral-900 border-b border-neutral-200">Feature</th>
+                    <th class="px-6 py-4 font-bold text-primary border-b border-neutral-200">Tirzepatide</th>
+                    <th class="px-6 py-4 font-bold text-neutral-600 border-b border-neutral-200">Semaglutide</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-neutral-100">
+                  <tr>
+                    <td class="px-6 py-4 font-medium text-neutral-900">Mechanism</td>
+                    <td class="px-6 py-4 text-primary font-medium">Dual GLP-1 + GIP</td>
+                    <td class="px-6 py-4 text-neutral-600">GLP-1 Only</td>
+                  </tr>
+                  <tr>
+                    <td class="px-6 py-4 font-medium text-neutral-900">Avg. Weight Loss</td>
+                    <td class="px-6 py-4 text-primary font-medium">Up to 22.5%</td>
+                    <td class="px-6 py-4 text-neutral-600">Up to ~15%</td>
+                  </tr>
+                  <tr>
+                    <td class="px-6 py-4 font-medium text-neutral-900">Brand Names</td>
+                    <td class="px-6 py-4 text-neutral-600">Mounjaro, Zepbound</td>
+                    <td class="px-6 py-4 text-neutral-600">Wegovy, Ozempic</td>
+                  </tr>
+                  <tr>
+                    <td class="px-6 py-4 font-medium text-neutral-900">Injection</td>
+                    <td class="px-6 py-4 text-neutral-600">Weekly</td>
+                    <td class="px-6 py-4 text-neutral-600">Weekly</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h2 id="faq">Frequently Asked Questions</h2>
+            <div class="not-prose space-y-4 my-8">
+              <details class="group rounded-xl border border-neutral-200 bg-white shadow-sm">
+                <summary class="flex cursor-pointer items-center justify-between px-6 py-4 font-medium text-neutral-900">
+                  How quickly will I see results?
+                  <span class="ml-6 flex h-7 w-7 items-center justify-center rounded-full bg-primary/10 text-primary transition group-open:-rotate-180">
+                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+                  </span>
+                </summary>
+                <div class="px-6 pb-4 text-sm text-neutral-600 leading-relaxed">
+                  Most patients notice reduced appetite within the first 1-2 weeks. Measurable weight loss typically begins within the first month. Significant results appear by months 3-6 as the dose increases.
+                </div>
+              </details>
+              <details class="group rounded-xl border border-neutral-200 bg-white shadow-sm">
+                <summary class="flex cursor-pointer items-center justify-between px-6 py-4 font-medium text-neutral-900">
+                  Does insurance cover tirzepatide?
+                  <span class="ml-6 flex h-7 w-7 items-center justify-center rounded-full bg-primary/10 text-primary transition group-open:-rotate-180">
+                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+                  </span>
+                </summary>
+                <div class="px-6 pb-4 text-sm text-neutral-600 leading-relaxed">
+                  Coverage varies. Some commercial plans cover Zepbound for weight management. Patients with type 2 diabetes may have coverage for Mounjaro. We help you navigate benefits and discuss transparent pricing options during your consultation.
+                </div>
+              </details>
+              <details class="group rounded-xl border border-neutral-200 bg-white shadow-sm">
+                <summary class="flex cursor-pointer items-center justify-between px-6 py-4 font-medium text-neutral-900">
+                  Are the side effects manageable?
+                  <span class="ml-6 flex h-7 w-7 items-center justify-center rounded-full bg-primary/10 text-primary transition group-open:-rotate-180">
+                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+                  </span>
+                </summary>
+                <div class="px-6 pb-4 text-sm text-neutral-600 leading-relaxed">
+                  Most side effects are gastrointestinal (nausea, constipation) and mild to moderate. They usually improve as your body adjusts. We start with a low dose to minimize these effects.
+                </div>
+              </details>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <CTA
+    heading="Start Your Weight Loss Journey"
+    text="Schedule your consultation to see if tirzepatide is right for you."
+    buttonText="Book Now"
+    buttonHref="/contact/"
+  />
+</BaseLayout>

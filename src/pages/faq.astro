@@ -1,0 +1,142 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import { SITE_URL, PHONE } from '../consts';
+
+const faqs = [
+  {
+    question: 'What is medical weight loss?',
+    answer: 'Medical weight loss is a physician-supervised approach to weight management that may include FDA-approved medications (such as tirzepatide or semaglutide), nutritional counseling, body composition analysis, and ongoing monitoring. Unlike commercial diet programs, medical weight loss addresses the biological factors that make sustained weight loss difficult, including hormonal imbalances, metabolic adaptation, and appetite regulation.',
+  },
+  {
+    question: 'What medications do you prescribe for weight loss?',
+    answer: 'At Weight Loss Knox, we primarily prescribe tirzepatide (Mounjaro/Zepbound) and semaglutide (Wegovy/Ozempic) — both FDA-approved GLP-1 receptor agonist medications that have demonstrated significant weight loss results in clinical trials. Tirzepatide is a dual GLP-1/GIP agonist that has shown up to 22.5% body weight reduction, while semaglutide has shown approximately 15% body weight reduction with additional proven cardiovascular benefits. Your physician will recommend the medication best suited to your health profile.',
+  },
+  {
+    question: 'How much weight can I expect to lose?',
+    answer: 'Results vary by individual, but clinical trials provide guidance. Patients on tirzepatide lost an average of 15-22.5% of their body weight over 72 weeks, while patients on semaglutide lost approximately 15% over 68 weeks. For a 250-pound individual, that could mean losing 37-56 pounds. Your actual results depend on factors including starting weight, medication dose, adherence to nutrition guidance, and physical activity level.',
+  },
+  {
+    question: 'Am I a candidate for weight loss medication?',
+    answer: 'Generally, candidates for GLP-1 weight loss medications have a BMI of 30 or greater (obesity), or a BMI of 27 or greater with at least one weight-related condition such as type 2 diabetes, high blood pressure, high cholesterol, or sleep apnea. You should also have made previous attempts at weight loss through diet and exercise. During your initial consultation, our physicians conduct a thorough evaluation to determine if medication is appropriate and safe for you.',
+  },
+  {
+    question: 'What happens during my first consultation?',
+    answer: 'Your first visit includes a comprehensive health assessment: medical history review, physical examination, body composition analysis, and laboratory work (metabolic panel, thyroid function, lipid panel, HbA1c). Your physician will discuss your weight loss goals, review your dietary habits and lifestyle, and determine the most appropriate treatment plan. The consultation typically takes 45-60 minutes.',
+  },
+  {
+    question: 'How are the medications administered?',
+    answer: 'Both tirzepatide and semaglutide are administered as once-weekly subcutaneous injections using pre-filled pens. The needles are very small and the injections are generally well-tolerated. Our medical team demonstrates proper injection technique at your first visit and ensures you are comfortable with self-administration before you go home.',
+  },
+  {
+    question: 'What are the common side effects?',
+    answer: 'The most common side effects of GLP-1 medications are gastrointestinal: nausea, diarrhea, constipation, and decreased appetite. These are typically mild to moderate and often improve over the first few weeks as your body adjusts. Starting at a low dose and gradually increasing helps minimize side effects. Your physician monitors your tolerance at each follow-up visit and adjusts the treatment plan as needed.',
+  },
+  {
+    question: 'How often will I need to come in for appointments?',
+    answer: 'During the initial titration phase (first 4-5 months), we typically see patients every 4 weeks to assess medication tolerance, adjust dosing, and monitor progress. Once you reach your maintenance dose, visits may be spaced to every 6-8 weeks. Each visit includes weight and body composition measurements, a review of your progress, and any necessary lab work.',
+  },
+  {
+    question: 'Does insurance cover weight loss medication?',
+    answer: 'Coverage varies significantly by insurance plan. Some commercial insurance plans cover Wegovy (semaglutide) or Zepbound (tirzepatide) for weight management. Patients with type 2 diabetes may have coverage for Ozempic or Mounjaro. Our team helps you navigate your specific insurance benefits, explore manufacturer savings programs, and understand out-of-pocket costs. We discuss all costs transparently during your consultation.',
+  },
+  {
+    question: 'How much does the program cost?',
+    answer: 'Program costs depend on the medication prescribed, your insurance coverage, and the frequency of visits. We are committed to transparent pricing and will discuss all expected costs during your initial consultation so there are no surprises. Contact our office for current pricing information.',
+  },
+  {
+    question: 'Will I regain weight if I stop the medication?',
+    answer: 'Research shows that weight regain is common after discontinuing GLP-1 medications, as the hormonal effects that suppress appetite and improve metabolism reverse. This is why our program emphasizes building sustainable nutrition and lifestyle habits during treatment. Your physician will develop a long-term plan that may include continued maintenance dosing, gradual tapering, or other strategies to support weight maintenance.',
+  },
+  {
+    question: 'Can I take weight loss medication if I have diabetes?',
+    answer: 'Yes. Both tirzepatide (originally approved as Mounjaro for type 2 diabetes) and semaglutide (originally approved as Ozempic for type 2 diabetes) are effective at improving blood sugar control while promoting weight loss. Your physician will coordinate the weight loss medication with your existing diabetes treatment plan and monitor your blood sugar levels closely.',
+  },
+  {
+    question: 'What is the difference between tirzepatide and semaglutide?',
+    answer: 'Both are GLP-1 receptor agonists, but tirzepatide is a dual-action medication that also targets GIP receptors, which appears to produce greater weight loss (up to 22.5% vs. ~15% for semaglutide). However, semaglutide has a longer track record, more established safety data, and proven cardiovascular benefits (20% reduction in major cardiovascular events in the SELECT trial). Your physician will recommend the best option based on your individual health profile and goals.',
+  },
+  {
+    question: 'Do you serve patients from outside Knoxville?',
+    answer: 'Yes. While our clinic is located in Knoxville, we welcome patients from throughout East Tennessee including Knox County, Farragut, Maryville, Alcoa, Oak Ridge, Clinton, Sevierville, and surrounding communities. We work with patients to establish convenient follow-up schedules.',
+  },
+  {
+    question: 'Is the initial consultation free?',
+    answer: 'Please contact our office for current consultation pricing. We believe in investing time in a thorough initial evaluation to ensure the best possible outcome, and we are transparent about all costs before you begin treatment.',
+  },
+];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+};
+---
+
+<BaseLayout
+  title="Frequently Asked Questions | Weight Loss Knox | Knoxville TN"
+  description="Answers to common questions about medical weight loss, tirzepatide, semaglutide, insurance coverage, and our program at Weight Loss Knox in Knoxville, TN."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-primary-dark via-primary to-primary-light px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
+    <div class="mx-auto max-w-4xl text-center">
+      <h1 class="font-serif text-4xl font-bold text-white sm:text-5xl">Frequently Asked Questions</h1>
+      <p class="mx-auto mt-4 max-w-2xl text-lg text-neutral-200">
+        Find answers to common questions about our medical weight loss program, medications, costs, and what to expect.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ List -->
+  <section class="bg-neutral-50 px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <div class="mx-auto max-w-3xl">
+      <div class="space-y-4">
+        {faqs.map((faq, i) => (
+          <details class="group rounded-xl border border-neutral-200 bg-white shadow-sm" open={i === 0}>
+            <summary class="flex cursor-pointer items-center justify-between px-6 py-5 font-medium text-neutral-800 [&::-webkit-details-marker]:hidden">
+              <span class="pr-4">{faq.question}</span>
+              <svg class="h-5 w-5 shrink-0 text-neutral-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="border-t border-neutral-100 px-6 py-4 text-sm leading-relaxed text-neutral-600">
+              {faq.answer}
+            </div>
+          </details>
+        ))}
+      </div>
+
+      <div class="mt-12 text-center">
+        <p class="text-neutral-600">
+          Don't see your question? Contact us directly.
+        </p>
+        <div class="mt-4 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <a href="/contact/" class="inline-block rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary-light">
+            Contact Us
+          </a>
+          <a href={`tel:${PHONE.replace(/[^0-9+]/g, '')}`} class="inline-block rounded-lg border-2 border-primary px-6 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white">
+            Call {PHONE}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    heading="Ready to Get Started?"
+    text="Schedule your consultation and take the first step toward lasting, physician-supervised weight loss."
+    buttonText="Book a Consultation"
+    buttonHref="/contact/"
+  />
+</BaseLayout>

@@ -66,14 +66,15 @@ import { SITE_TITLE, SITE_URL, EMAIL, LOCATIONS } from '../consts';
           By providing your phone number and opting in to receive SMS/text messages from {SITE_TITLE}, you consent to receive text messages related to your account, appointments, and services. These may include appointment reminders, account notifications, and treatment-related communications.
         </p>
         <p class="font-semibold">
-          SMS consent and phone numbers are not shared with third parties or affiliates for marketing purposes. SMS consent is not shared with third parties.
+          SMS consent and phone numbers are not shared with any third parties or affiliates.
         </p>
-        <ul>
-          <li>Messaging frequency may vary.</li>
-          <li>Message and data rates may apply.</li>
-          <li>To opt out of SMS messages at any time, reply <strong>STOP</strong> to any message.</li>
-          <li>For assistance, reply <strong>HELP</strong> or visit our website at <a href={SITE_URL}>{SITE_URL}</a>.</li>
-        </ul>
+
+        <div class="bg-neutral-50 border border-neutral-200 rounded-lg p-6 my-6">
+          <p class="font-semibold text-neutral-900 mb-3">SMS Disclosures</p>
+          <p>
+            If you consent to receive SMS from {SITE_TITLE}, you agree to receive appointment reminders, account notifications, treatment-related updates, and responses to your inquiries via SMS from us. Reply STOP to opt-out; Reply HELP for support; Message & data rates may apply; Messaging frequency may vary. Visit <a href={`${SITE_URL}/privacy/`}>{SITE_URL}/privacy/</a> to see our privacy policy and <a href={`${SITE_URL}/terms/`}>{SITE_URL}/terms/</a> for our terms and conditions.
+          </p>
+        </div>
 
         <h2 class="font-serif text-2xl font-bold text-primary mt-8">5. Data Security</h2>
         <p>

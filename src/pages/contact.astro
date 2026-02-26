@@ -192,16 +192,28 @@ const jsonLd = {
               ></textarea>
             </div>
 
+            <!-- SMS Consent Checkbox -->
+            <div class="rounded-lg border border-neutral-200 bg-neutral-50 p-4">
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input
+                  type="checkbox"
+                  id="smsConsent"
+                  name="smsConsent"
+                  required
+                  class="mt-1 h-4 w-4 rounded border-neutral-300 text-primary focus:ring-primary/20 flex-shrink-0"
+                />
+                <span class="text-sm text-neutral-700">
+                  I agree to receive SMS/text messages from Weight Loss Knox, including appointment reminders, account notifications, and treatment-related updates. Messaging frequency may vary. Message and data rates may apply. Reply <strong>STOP</strong> to opt-out at any time. Reply <strong>HELP</strong> for support. SMS consent and phone numbers are not shared with any third parties or affiliates. View our <a href="/privacy/" class="text-primary underline hover:text-primary-light">Privacy Policy</a> and <a href="/terms/" class="text-primary underline hover:text-primary-light">Terms & Conditions</a>. <span class="text-red-500">*</span>
+                </span>
+              </label>
+            </div>
+
             <button
               type="submit"
               class="w-full rounded-xl bg-accent px-8 py-4 text-base font-bold text-primary-dark shadow-lg transition-all hover:bg-accent-light hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 sm:w-auto"
             >
               Submit Request
             </button>
-
-            <p class="text-xs text-neutral-400">
-              By submitting this form, you consent to be contacted by Weight Loss Knox about our services via phone, email, and SMS/text message. Message frequency may vary. Message and data rates may apply. Reply STOP to opt out of SMS at any time. Reply HELP for assistance. SMS consent is not shared with third parties. See our <a href="/privacy/" class="underline hover:text-neutral-600">Privacy Policy</a> and <a href="/terms/" class="underline hover:text-neutral-600">Terms & Conditions</a>.
-            </p>
           </form>
         </div>
       </div>

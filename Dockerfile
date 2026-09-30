@@ -1,28 +1,30 @@
 # Stage 1: Build the Astro site
 FROM node:22-alpine AS build
 
-RUN corepack enable
+# corepack ignores the packageManager pin on Fly's builder and fetches the newest
+# pnpm (12.x on 2026-09-30), which no longer reads the build allow-list from
+# package.json and refuses esbuild and sharp. Pin the same pnpm the lockfile
+# was made with, the way the main site does.
 
 WORKDIR /app
 
 # Install dependencies first (better layer caching)
 COPY package.json pnpm-lock.yaml ./
-RUN pnpm install --frozen-lockfile
+RUN npx -y pnpm@10.33.3 install --frozen-lockfile
 
 # Copy source and build
 COPY . .
-RUN pnpm build
+RUN npx -y pnpm@10.33.3 build
 
 # Stage 2: Run the Node server
 FROM node:22-alpine AS runtime
 
-RUN corepack enable
 
 WORKDIR /app
 
 # Install production dependencies
 COPY package.json pnpm-lock.yaml ./
-RUN pnpm install --frozen-lockfile --prod
+RUN npx -y pnpm@10.33.3 install --frozen-lockfile --prod
 
 # Copy the built output
 COPY --from=build /app/dist ./dist

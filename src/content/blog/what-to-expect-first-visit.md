@@ -1,127 +1,78 @@
 ---
 title: "What to Expect at Your First Medical Weight Loss Consultation"
-description: "Planning your first visit to Knoxville Weight Loss Clinic? Here's everything you need to know about our initial consultation process."
+description: "Planning your first visit to Knoxville Weight Loss Clinic? Here is what happens at your free consultation, and what comes next."
 pubDate: "2025-02-15"
+updatedDate: "2026-10-27"
 author: "Knoxville Weight Loss Clinic Team"
 tags: ["consultation", "getting started", "weight loss program"]
 ---
 
-Taking the first step toward medical weight loss can feel both exciting and a little nerve-wracking. You might be wondering what actually happens during an initial consultation, whether you will qualify for medication, and how long the whole process takes.
+Your first step toward medical weight loss can feel exciting and a little scary. You may wonder what happens at the consultation, if the shot is right for you, and how long it all takes.
 
-At Knoxville Weight Loss Clinic in Knoxville, TN, we have designed our consultation process to be thorough but also straightforward and comfortable. We want you to leave your first visit feeling informed, confident, and ready to start your weight loss journey. Here is a complete walkthrough of what to expect.
+At Knoxville Weight Loss Clinic in Knoxville, TN, we keep the first visit simple. Your first consultation is free and takes about 30 minutes. Here is what to expect.
 
 ## Before Your Appointment: What to Bring
 
-A little preparation goes a long way. To make your first visit as efficient as possible, please bring the following:
+Bring these items if you can:
 
-- **Photo ID and insurance card** (if applicable)
-- **A list of current medications**, including dosages and any supplements you take
-- **Recent lab work**, if you have had any within the past 3–6 months (we can also order labs if needed)
-- **A summary of your medical history**, including any prior surgeries, chronic conditions, and family health history
-- **Previous weight loss history** — this includes any diets, programs, or medications you have tried in the past
-- **Questions you want to ask** — write them down so you do not forget
+- **A photo ID**
+- **A list of the medicines you take**, with the doses, and any supplements
+- **Recent lab results**, if you have them
+- **Your health history**, such as past surgeries and long-term conditions
+- **Your weight loss history**: the diets, programs or medicines that you tried before
+- **Your questions**: write them down so you do not forget them
 
-You do not need to have all of this perfectly organized. Our team will walk through everything with you and fill in any gaps during the consultation.
+Do not worry if you do not have all of this. We can fill in the gaps together.
 
-## Step 1: Initial Intake and Health History Review
+## Step 1: The Free Consultation
 
-Your visit begins with a detailed health history intake. A member of our medical team will sit down with you to discuss:
+At the consultation, we talk about:
 
-- **Your weight history**: When did weight become a concern? Have you experienced weight fluctuations? What have you tried before?
-- **Medical conditions**: Diabetes, high blood pressure, sleep apnea, thyroid issues, PCOS, joint problems, and other conditions that may affect or be affected by your weight.
-- **Medications**: Certain medications can contribute to weight gain, and it is important for us to understand the full picture before recommending treatment.
-- **Lifestyle factors**: Your typical eating patterns, physical activity level, sleep quality, stress levels, and any emotional or behavioral factors related to food.
-- **Goals and expectations**: What does success look like for you? We want to understand not just a number on the scale but how you want to feel and what you want to be able to do.
+- **Your weight history**: when your weight became a concern, and what you tried before
+- **Your health**: conditions such as diabetes, high blood pressure, sleep apnea or thyroid problems
+- **Your medicines**: some medicines can cause weight gain, and some do not mix well with the shot
+- **Your daily life**: how you eat, how you sleep and how active you are
+- **Your goals**: not only a number on the scale, but how you want to feel
 
-This conversation is a two-way street. We are not here to judge your past efforts — we are here to understand where you are now and build a plan that actually works for your life.
+We also explain how the shot works. Semaglutide and tirzepatide are once-a-week shots that make you less hungry. You feel full sooner, you stay full longer, and the cravings quiet down.
 
-## Step 2: Physical Assessment and Measurements
+There is no judgment here. We want to know where you are now, so that we can help you from there.
 
-After the history review, we conduct a physical assessment that typically includes:
+## Step 2: The Medical Evaluation
 
-- **Height, weight, and BMI calculation**
-- **Blood pressure measurement**
-- **Waist circumference** and other relevant body measurements
-- **Body composition analysis**, when indicated, to understand your ratio of lean mass to fat mass
-- **General physical assessment** to identify any visible health concerns
+If you want to start, a provider does a medical evaluation. The provider looks at your health history and the medicines you take, and decides if the shot is safe and right for you.
 
-These baseline measurements give us concrete starting points and help us track your progress over time. They also help determine which treatments are medically appropriate for you.
+Medication is prescribed only after this evaluation. The shot is not safe for everyone. For example, it is not for people who are pregnant.
 
-## Step 3: Laboratory Testing
+## Step 3: Your Plan and Your Price
 
-Depending on whether you have recent lab work available, we may order blood tests to get a complete picture of your metabolic health. Common labs include:
+After the evaluation, you and your provider pick a medicine:
 
-- **Complete metabolic panel** (kidney function, liver function, blood sugar)
-- **Lipid panel** (cholesterol and triglycerides)
-- **Hemoglobin A1c** (3-month average blood sugar — important for diabetes screening)
-- **Thyroid function tests** (TSH, and additional thyroid markers if indicated)
-- **Vitamin and nutrient levels** when relevant (such as vitamin D or B12)
+- **[Semaglutide](/semaglutide/)** acts like one hormone that your body makes after a meal, GLP-1. It starts at $150 a month.
+- **[Tirzepatide](/tirzepatide/)** acts like two of these hormones, GLP-1 and GIP. It starts at $250 a month.
 
-Lab results help us identify underlying conditions that may be contributing to weight gain or that need to be considered in your treatment plan. For example, undiagnosed insulin resistance or hypothyroidism can make weight loss significantly harder without proper treatment.
+You get your exact price before you start.
 
-If labs are ordered during your visit, results are typically available within a few days, and we will review them with you at your follow-up or over a phone call.
+## Step 4: Your Weekly Shot
 
-## Step 4: Treatment Plan Discussion
+You take one small shot a week. You start with a low dose, and we adjust the dose as you go. A low start helps your body get used to the medicine.
 
-This is the core of your consultation — the part where we put it all together. Based on your health history, physical assessment, lab results (if available), and personal goals, our provider will discuss:
-
-### Medication Options
-
-If you are a candidate for weight loss medication, we will explain the options available to you — including tirzepatide, semaglutide, and other medications when appropriate. We cover:
-
-- How each medication works
-- Expected results based on clinical data
-- Potential side effects and how we manage them
-- Dosing schedules and how titration works
-- Cost, insurance coverage, and available savings programs
-
-### Lifestyle Recommendations
-
-Medication is most effective when combined with sustainable lifestyle changes. We will discuss:
-
-- **Nutrition guidance** tailored to your medication and goals (not a restrictive crash diet)
-- **Physical activity** recommendations appropriate for your current fitness level
-- **Hydration and sleep** — two often-overlooked factors in weight management
-- **Behavioral strategies** for managing cravings, emotional eating, and building new habits
-
-### Follow-Up Schedule
-
-We will outline a follow-up plan so you know exactly what comes next. Most patients see us:
-
-- **Monthly** during the initial titration phase (first 3–4 months)
-- **Every 4–8 weeks** once a stable maintenance dose is reached
-- **As needed** for any questions or concerns between visits
-
-Regular follow-ups are essential. They allow us to adjust your medication dosing, monitor for side effects, track your progress, and provide ongoing support and accountability.
-
-## Step 5: Starting Treatment
-
-If you and your provider decide to move forward with medication, treatment can often begin the same day or within a few days depending on lab results and insurance processing. We will:
-
-- Provide your first injection or prescription
-- Walk you through exactly how to administer the medication at home
-- Give you written instructions and resources
-- Make sure you know how to reach us with any questions
-
-For patients who are not ready to start medication or who may benefit from a lifestyle-first approach, we develop a plan focused on nutrition, activity, and behavior change with the option to add medication later.
+Some patients come in to our office each week for their shot. Others come in about once a month. If you have questions between visits, call us.
 
 ## What Your First Visit Is Not
 
-We find it helpful to set expectations about what the consultation is **not**:
-
-- **It is not a sales pitch.** We will give you honest, evidence-based information and let you make the best decision for yourself.
-- **It is not a judgment session.** Everyone's weight journey is different, and there is no shame in seeking help.
-- **It is not a one-size-fits-all plan.** Your treatment is personalized to you.
-- **It is not a one-and-done visit.** This is the beginning of an ongoing relationship with your medical weight loss team.
+- **It is not a sales pitch.** We give you honest information, and you decide.
+- **It is not a judgment session.** Every weight story is different, and there is no shame in asking for help.
+- **It is not one plan for everyone.** Your plan fits your health and your goals.
 
 ## How Long Does the Consultation Take?
 
-Plan for your first visit to take approximately **45 minutes to one hour**. This allows enough time for a thorough evaluation without feeling rushed. We believe this initial investment of time leads to better outcomes because we truly understand your situation before recommending treatment.
+Plan for about 30 minutes. That is enough time to answer your questions without a rush.
 
 ## Ready to Take the First Step?
 
-If you have been considering medical weight loss, your first consultation at Knoxville Weight Loss Clinic is the moment everything starts to change. You will walk in with questions and walk out with a clear, personalized plan backed by science and supported by a team that is genuinely invested in your success.
+Your first consultation is free. You walk in with questions. You walk out knowing if a once-a-week shot that makes you less hungry is right for you, and what it costs.
 
-We see patients from across the Knoxville area, including Farragut, Maryville, Oak Ridge, and surrounding East Tennessee communities. Wherever you are coming from, we are here to help.
+We see patients from all over the Knoxville area, including Farragut, Maryville, Oak Ridge and the rest of East Tennessee.
 
-[Book your consultation today](/contact) and take the first step toward the healthier, more energized life you deserve.
+[Book your free consultation](/book?service=weight-loss-consultation) today.

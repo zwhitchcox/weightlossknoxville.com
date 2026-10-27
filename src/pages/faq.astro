@@ -3,66 +3,68 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import CTA from '../components/CTA.astro';
 import { SITE_URL, PHONE } from '../consts';
 
+const bookHref = '/book?service=weight-loss-consultation';
+
 const faqs = [
   {
     question: 'What is medical weight loss?',
-    answer: 'Medical weight loss is a physician-supervised approach to weight management that may include FDA-approved medications (such as tirzepatide or semaglutide), nutritional counseling, body composition analysis, and ongoing monitoring. Unlike commercial diet programs, medical weight loss addresses the biological factors that make sustained weight loss difficult, including hormonal imbalances, metabolic adaptation, and appetite regulation.',
+    answer: 'Medical weight loss uses medicine to help you lose weight. At Knoxville Weight Loss Clinic, that medicine is a GLP-1 shot, semaglutide or tirzepatide, that you take once a week. It makes you less hungry. You feel full sooner, you stay full longer, and the cravings quiet down, so it is easier to eat less.',
   },
   {
-    question: 'What medications do you prescribe for weight loss?',
-    answer: 'At Knoxville Weight Loss Clinic, we primarily prescribe tirzepatide (Mounjaro/Zepbound) and semaglutide (Wegovy/Ozempic) — both FDA-approved GLP-1 receptor agonist medications that have demonstrated significant weight loss results in clinical trials. Tirzepatide is a dual GLP-1/GIP agonist that has shown up to 22.5% body weight reduction, while semaglutide has shown approximately 15% body weight reduction with additional proven cardiovascular benefits. Your physician will recommend the medication best suited to your health profile.',
+    question: 'How much does it cost?',
+    answer: 'Semaglutide starts at $150 a month. Tirzepatide starts at $250 a month. The first consultation is free, and you get your exact price after your medical evaluation.',
   },
   {
-    question: 'How much weight can I expect to lose?',
-    answer: 'Results vary by individual, but clinical trials provide guidance. Patients on tirzepatide lost an average of 15-22.5% of their body weight over 72 weeks, while patients on semaglutide lost approximately 15% over 68 weeks. For a 250-pound individual, that could mean losing 37-56 pounds. Your actual results depend on factors including starting weight, medication dose, adherence to nutrition guidance, and physical activity level.',
+    question: 'Is the first consultation free?',
+    answer: 'Yes. Your first consultation is free. Book online in about a minute, or call us.',
   },
   {
-    question: 'Am I a candidate for weight loss medication?',
-    answer: 'Generally, candidates for GLP-1 weight loss medications have a BMI of 30 or greater (obesity), or a BMI of 27 or greater with at least one weight-related condition such as type 2 diabetes, high blood pressure, high cholesterol, or sleep apnea. You should also have made previous attempts at weight loss through diet and exercise. During your initial consultation, our physicians conduct a thorough evaluation to determine if medication is appropriate and safe for you.',
+    question: 'What medicines do you offer for weight loss?',
+    answer: 'We offer semaglutide and tirzepatide. Both are once-a-week shots that make you less hungry. Medication is prescribed only after a medical evaluation.',
   },
   {
-    question: 'What happens during my first consultation?',
-    answer: 'Your first visit includes a comprehensive health assessment: medical history review, physical examination, body composition analysis, and laboratory work (metabolic panel, thyroid function, lipid panel, HbA1c). Your physician will discuss your weight loss goals, review your dietary habits and lifestyle, and determine the most appropriate treatment plan. The consultation typically takes 45-60 minutes.',
+    question: 'What is the difference between semaglutide and tirzepatide?',
+    answer: 'Both are once-a-week shots that make you less hungry. Semaglutide acts like one hormone that your body makes after a meal, GLP-1. Tirzepatide acts like two, GLP-1 and GIP. Semaglutide starts at $150 a month, and tirzepatide starts at $250 a month. After your medical evaluation, you and your provider pick the one that fits your health, your goals and your budget.',
   },
   {
-    question: 'How are the medications administered?',
-    answer: 'Both tirzepatide and semaglutide are administered as once-weekly subcutaneous injections using pre-filled pens. The needles are very small and the injections are generally well-tolerated. Our medical team demonstrates proper injection technique at your first visit and ensures you are comfortable with self-administration before you go home.',
+    question: 'How much weight will I lose?',
+    answer: 'Results vary from person to person, so we do not promise a number. What the shot does is make you less hungry, so it is easier to eat less.',
+  },
+  {
+    question: 'Who can get the shot?',
+    answer: 'Adults who want to lose weight can book a free consultation. Then a provider does a medical evaluation. The provider looks at your health history and the medicines you take, and decides if the shot is safe and right for you. The shot is not safe for everyone. For example, it is not for people who are pregnant.',
+  },
+  {
+    question: 'What happens at my first consultation?',
+    answer: 'Your first consultation is free and takes about 30 minutes. We talk about your goals and your health history, and we answer your questions. If you want to start, a provider does a medical evaluation to see if the shot is right for you. Then you get your plan and your price.',
+  },
+  {
+    question: 'How is the shot given?',
+    answer: 'It is a small shot under the skin, once a week, with a very small needle. You can come in to our office for your shot, or ask us about giving it to yourself at home.',
   },
   {
     question: 'What are the common side effects?',
-    answer: 'The most common side effects of GLP-1 medications are gastrointestinal: nausea, diarrhea, constipation, and decreased appetite. These are typically mild to moderate and often improve over the first few weeks as your body adjusts. Starting at a low dose and gradually increasing helps minimize side effects. Your physician monitors your tolerance at each follow-up visit and adjusts the treatment plan as needed.',
+    answer: 'The most common side effects are nausea, diarrhea and constipation. For most people they are mild, and they often get better as the body gets used to the medicine. You start with a low dose, and we adjust the dose as you go. Smaller meals, eating slowly and plenty of water also help.',
   },
   {
-    question: 'How often will I need to come in for appointments?',
-    answer: 'During the initial titration phase (first 4-5 months), we typically see patients every 4 weeks to assess medication tolerance, adjust dosing, and monitor progress. Once you reach your maintenance dose, visits may be spaced to every 6-8 weeks. Each visit includes weight and body composition measurements, a review of your progress, and any necessary lab work.',
+    question: 'How often do I come in?',
+    answer: 'It depends on your plan. Some patients come in each week for their shot. Others come in about once a month.',
   },
   {
-    question: 'Does insurance cover weight loss medication?',
-    answer: 'Coverage varies significantly by insurance plan. Some commercial insurance plans cover Wegovy (semaglutide) or Zepbound (tirzepatide) for weight management. Patients with type 2 diabetes may have coverage for Ozempic or Mounjaro. Our team helps you navigate your specific insurance benefits, explore manufacturer savings programs, and understand out-of-pocket costs. We discuss all costs transparently during your consultation.',
+    question: 'Does insurance cover weight loss medicine?',
+    answer: 'Coverage for weight loss medicine depends on your insurance plan. Our plans have a simple monthly price: semaglutide from $150 a month and tirzepatide from $250 a month. The first consultation is free.',
   },
   {
-    question: 'How much does the program cost?',
-    answer: 'Program costs depend on the medication prescribed, your insurance coverage, and the frequency of visits. We are committed to transparent pricing and will discuss all expected costs during your initial consultation so there are no surprises. Contact our office for current pricing information.',
+    question: 'Will I gain the weight back if I stop?',
+    answer: 'Some people gain weight back after they stop, because the hunger comes back. Use your time on the shot to build habits that last, such as eating more protein and moving more. Talk with your provider before you stop.',
   },
   {
-    question: 'Will I regain weight if I stop the medication?',
-    answer: 'Research shows that weight regain is common after discontinuing GLP-1 medications, as the hormonal effects that suppress appetite and improve metabolism reverse. This is why our program emphasizes building sustainable nutrition and lifestyle habits during treatment. Your physician will develop a long-term plan that may include continued maintenance dosing, gradual tapering, or other strategies to support weight maintenance.',
+    question: 'Can I take the shot if I have diabetes?',
+    answer: 'In many cases, yes. GLP-1 medicines were first used for type 2 diabetes. At your medical evaluation, tell the provider about your diabetes and the medicines you take. The provider decides if the shot is safe for you.',
   },
   {
-    question: 'Can I take weight loss medication if I have diabetes?',
-    answer: 'Yes. Both tirzepatide (originally approved as Mounjaro for type 2 diabetes) and semaglutide (originally approved as Ozempic for type 2 diabetes) are effective at improving blood sugar control while promoting weight loss. Your physician will coordinate the weight loss medication with your existing diabetes treatment plan and monitor your blood sugar levels closely.',
-  },
-  {
-    question: 'What is the difference between tirzepatide and semaglutide?',
-    answer: 'Both are GLP-1 receptor agonists, but tirzepatide is a dual-action medication that also targets GIP receptors, which appears to produce greater weight loss (up to 22.5% vs. ~15% for semaglutide). However, semaglutide has a longer track record, more established safety data, and proven cardiovascular benefits (20% reduction in major cardiovascular events in the SELECT trial). Your physician will recommend the best option based on your individual health profile and goals.',
-  },
-  {
-    question: 'Do you serve patients from outside Knoxville?',
-    answer: 'Yes. While our clinic is located in Knoxville, we welcome patients from throughout East Tennessee including Knox County, Farragut, Maryville, Alcoa, Oak Ridge, Clinton, Sevierville, and surrounding communities. We work with patients to establish convenient follow-up schedules.',
-  },
-  {
-    question: 'Is the initial consultation free?',
-    answer: 'Please contact our office for current consultation pricing. We believe in investing time in a thorough initial evaluation to ensure the best possible outcome, and we are transparent about all costs before you begin treatment.',
+    question: 'Do you see patients from outside Knoxville?',
+    answer: 'Yes. We see patients from all over East Tennessee, including Farragut, Maryville, Alcoa, Oak Ridge, Clinton and Sevierville.',
   },
 ];
 
@@ -93,7 +95,7 @@ const jsonLd = {
     <div class="mx-auto max-w-4xl text-center">
       <h1 class="font-serif text-4xl font-bold text-white sm:text-5xl">Frequently Asked Questions</h1>
       <p class="mx-auto mt-4 max-w-2xl text-lg text-neutral-200">
-        Find answers to common questions about our medical weight loss program, medications, costs, and what to expect.
+        Answers to common questions about medical weight loss, our once-a-week shots, prices and what to expect.
       </p>
     </div>
   </section>
@@ -135,8 +137,8 @@ const jsonLd = {
 
   <CTA
     heading="Ready to Get Started?"
-    text="Schedule your consultation and take the first step toward lasting, physician-supervised weight loss."
-    buttonText="Book a Consultation"
-    buttonHref="/contact/"
+    text="Book a free consultation to find out if a once-a-week shot that makes you less hungry is right for you. Plans start at $150 a month."
+    buttonText="Book Your Free Consultation"
+    buttonHref={bookHref}
   />
 </BaseLayout>

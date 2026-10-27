@@ -1,6 +1,6 @@
 export const SITE_TITLE = 'Knoxville Weight Loss Clinic - Semaglutide & Tirzepatide';
 export const SITE_DESCRIPTION =
-  'Medical weight loss and med spa clinic in Knoxville, TN specializing in semaglutide, tirzepatide, Botox, fillers, laser treatments, and more. Physician-supervised programs with proven results.';
+  'Medical weight loss in Knoxville, TN: a once-a-week semaglutide or tirzepatide shot that makes you less hungry, from $150 a month. Free consultation. We also offer Botox, fillers, laser treatments, and more.';
 export const SITE_URL = 'https://weightlossknoxvilletn.com';
 export const EMAIL = 'info@weightlossknoxvilletn.com';
 

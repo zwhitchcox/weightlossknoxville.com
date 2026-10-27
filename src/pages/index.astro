@@ -2,6 +2,13 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CTA from '../components/CTA.astro';
 import { SITE_URL, PHONE, EMAIL, LOCATIONS } from '../consts';
+import { getListingHours, openingHoursSpecification } from '../lib/listing-hours';
+
+// Renders on request: the hours come from the Google listings.
+export const prerender = false;
+
+// The brand has one schema entry. It has the hours of the Bearden listing.
+const beardenHours = await getListingHours(LOCATIONS.bearden.listingId);
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -50,9 +57,7 @@ const jsonLd = {
     },
   ],
   priceRange: '$$',
-  openingHoursSpecification: [
-    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'], opens: '10:00', closes: '19:00' },
-  ],
+  openingHoursSpecification: openingHoursSpecification(beardenHours),
   medicalSpecialty: 'Bariatric Medicine',
   hasOfferCatalog: {
     '@type': 'OfferCatalog',

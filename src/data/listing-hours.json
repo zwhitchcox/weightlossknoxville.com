@@ -1,0 +1,27 @@
+{
+  "note": "Used only when hitchcoxaesthetics.com/resources/listing-hours does not answer. Copied from it on 2026-10-27.",
+  "listings": {
+    "locations/15016055128629417766": {
+      "title": "Knoxville Weight Loss Clinic - Semaglutide & Tirzepatide (Bearden)",
+      "periods": [
+        { "day": "Monday", "opens": "10:00", "closes": "19:00" },
+        { "day": "Tuesday", "opens": "10:00", "closes": "19:00" },
+        { "day": "Wednesday", "opens": "10:00", "closes": "19:00" },
+        { "day": "Thursday", "opens": "10:00", "closes": "19:00" },
+        { "day": "Friday", "opens": "10:00", "closes": "19:00" },
+        { "day": "Saturday", "opens": "10:00", "closes": "19:00" }
+      ]
+    },
+    "locations/5772695199180090933": {
+      "title": "Knoxville Weight Loss Clinic - Semaglutide & Tirzepatide (Farragut)",
+      "periods": [
+        { "day": "Monday", "opens": "10:00", "closes": "19:00" },
+        { "day": "Tuesday", "opens": "10:00", "closes": "19:00" },
+        { "day": "Wednesday", "opens": "10:00", "closes": "19:00" },
+        { "day": "Thursday", "opens": "10:00", "closes": "19:00" },
+        { "day": "Friday", "opens": "10:00", "closes": "19:00" },
+        { "day": "Saturday", "opens": "10:00", "closes": "19:00" }
+      ]
+    }
+  }
+}

@@ -2,6 +2,16 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CTA from '../components/CTA.astro';
 import { SITE_URL, EMAIL, LOCATIONS } from '../consts';
+import {
+  clock,
+  dayLabel,
+  getListingHours,
+  hoursRows,
+  openingHoursSpecification,
+} from '../lib/listing-hours';
+
+// Renders on request: the hours come from the Google listings.
+export const prerender = false;
 
 const office = LOCATIONS.farragut;
 const phoneHref = `tel:${office.phone.replace(/[^0-9+]/g, '')}`;
@@ -12,12 +22,12 @@ const mapsUrl = 'https://maps.google.com/maps?cid=4084322432453461664';
 const directionsUrl =
   'https://www.google.com/maps/dir/?api=1&destination=Knoxville+Weight+Loss+Clinic&destination_place_id=ChIJn1HGW2YvXIgRoEaM1pxtrjg';
 
-// Same days and times as the Google listing, which has the hours of the
-// Bearden listing (Zane, 2026-10-27).
-const hours = [
-  { day: 'Monday - Saturday', time: '10:00 AM - 7:00 PM' },
-  { day: 'Sunday', time: 'Closed' },
-];
+// The hours of this office's Google listing.
+const periods = await getListingHours(office.listingId);
+const hours = hoursRows(periods).map((row) => ({
+  day: dayLabel(row.days, 'long'),
+  time: row.opens ? `${clock(row.opens)} - ${clock(row.closes!)}` : 'Closed',
+}));
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -45,14 +55,7 @@ const jsonLd = {
     longitude: -84.15906,
   },
   hasMap: mapsUrl,
-  openingHoursSpecification: [
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-      opens: '10:00',
-      closes: '19:00',
-    },
-  ],
+  openingHoursSpecification: openingHoursSpecification(periods),
 };
 ---
 

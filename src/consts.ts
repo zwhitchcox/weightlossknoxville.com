@@ -10,6 +10,8 @@ export const PHONE = '(865) 500-3135';
 export const LOCATIONS = {
   bearden: {
     name: 'Bearden',
+    // Its Google listing: the source of the office hours (src/lib/listing-hours.ts).
+    listingId: 'locations/15016055128629417766',
     phone: '(865) 500-3135',
     street: '5113 Kingston Pike',
     suite: 'Suite 15C',
@@ -20,6 +22,8 @@ export const LOCATIONS = {
   },
   farragut: {
     name: 'Farragut',
+    // Its Google listing: the source of the office hours (src/lib/listing-hours.ts).
+    listingId: 'locations/5772695199180090933',
     phone: '(865) 500-3510',
     street: '102 S Campbell Station Rd',
     suite: 'Suite 8C',

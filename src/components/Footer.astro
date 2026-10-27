@@ -81,12 +81,14 @@ const currentYear = new Date().getFullYear();
       <div>
         <h3 class="font-serif text-lg font-semibold text-white tracking-wide">Farragut Location</h3>
         <div class="mt-4 space-y-3 text-sm">
-          <address class="not-italic text-neutral-400 leading-relaxed">
-            {LOCATIONS.farragut.street}<br />
-            {LOCATIONS.farragut.suite}<br />
-            <span class="text-neutral-500 text-xs">{LOCATIONS.farragut.inside}</span><br />
-            {LOCATIONS.farragut.city}, {LOCATIONS.farragut.state} {LOCATIONS.farragut.zip}
-          </address>
+          <a href="/farragut/" class="block text-neutral-400 hover:text-white transition-colors">
+            <address class="not-italic leading-relaxed">
+              {LOCATIONS.farragut.street}<br />
+              {LOCATIONS.farragut.suite}<br />
+              <span class="text-neutral-500 text-xs">{LOCATIONS.farragut.inside}</span><br />
+              {LOCATIONS.farragut.city}, {LOCATIONS.farragut.state} {LOCATIONS.farragut.zip}
+            </address>
+          </a>
           <a href={`tel:${LOCATIONS.farragut.phone.replace(/[^0-9+]/g, '')}`} class="hover:text-white transition-colors block">
             {LOCATIONS.farragut.phone}
           </a>

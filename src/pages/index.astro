@@ -125,7 +125,7 @@ const features = [
             Accepting New Weight Loss Patients in Knoxville, TN
           </div>
           <h1 class="font-serif text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl tracking-tight">
-            Medical Weight Loss in Knoxville<br />
+            Medical Weight Loss Clinic in Knoxville<br />
             <span class="text-accent">With Semaglutide & Tirzepatide</span>
           </h1>
           <p class="mt-6 text-lg leading-relaxed text-neutral-200">
@@ -359,6 +359,40 @@ const features = [
             <p class="text-neutral-400 text-sm tracking-wide uppercase">{stat.label}</p>
           </div>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Offices -->
+  <section class="py-16 sm:py-24 bg-white">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <h2 class="font-serif text-3xl font-bold text-primary text-center sm:text-4xl mb-12">Our Knoxville Weight Loss Clinic Offices</h2>
+      <div class="grid gap-8 md:grid-cols-2">
+        <div class="rounded-2xl bg-neutral-50 p-8 border border-neutral-100">
+          <h3 class="font-serif text-xl font-bold text-neutral-900">Bearden</h3>
+          <address class="mt-3 not-italic leading-relaxed text-neutral-600">
+            {LOCATIONS.bearden.street}, {LOCATIONS.bearden.suite}<br />
+            <span class="text-sm text-neutral-500">{LOCATIONS.bearden.inside}</span><br />
+            {LOCATIONS.bearden.city}, {LOCATIONS.bearden.state} {LOCATIONS.bearden.zip}
+          </address>
+          <a href={`tel:${LOCATIONS.bearden.phone.replace(/[^0-9+]/g, '')}`} class="mt-3 block font-semibold text-primary hover:text-primary-light">
+            {LOCATIONS.bearden.phone}
+          </a>
+        </div>
+        <div class="rounded-2xl bg-neutral-50 p-8 border border-neutral-100">
+          <h3 class="font-serif text-xl font-bold text-neutral-900">Farragut</h3>
+          <address class="mt-3 not-italic leading-relaxed text-neutral-600">
+            {LOCATIONS.farragut.street}, {LOCATIONS.farragut.suite}<br />
+            <span class="text-sm text-neutral-500">{LOCATIONS.farragut.inside}</span><br />
+            {LOCATIONS.farragut.city}, {LOCATIONS.farragut.state} {LOCATIONS.farragut.zip}
+          </address>
+          <a href={`tel:${LOCATIONS.farragut.phone.replace(/[^0-9+]/g, '')}`} class="mt-3 block font-semibold text-primary hover:text-primary-light">
+            {LOCATIONS.farragut.phone}
+          </a>
+          <a href="/farragut/" class="mt-4 inline-block font-semibold text-primary underline decoration-accent underline-offset-4 hover:text-primary-light">
+            Farragut weight loss clinic hours and directions
+          </a>
+        </div>
       </div>
     </div>
   </section>

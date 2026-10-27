@@ -8,7 +8,7 @@ const jsonLd = {
   '@type': 'MedicalBusiness',
   '@id': SITE_URL,
   name: 'Knoxville Weight Loss Clinic - Semaglutide & Tirzepatide',
-  description: 'Physician-supervised medical weight loss and med spa clinic in Knoxville, TN. Semaglutide starting at $150/month, tirzepatide starting at $250/month. Botox, fillers, laser treatments, and more.',
+  description: 'Medical weight loss in Knoxville, TN: a once-a-week semaglutide or tirzepatide shot that makes you less hungry. Semaglutide from $150 a month, tirzepatide from $250 a month. Free consultation. Botox, fillers, laser treatments, and more.',
   url: SITE_URL,
   telephone: PHONE,
   email: EMAIL,
@@ -58,8 +58,8 @@ const jsonLd = {
     '@type': 'OfferCatalog',
     name: 'Weight Loss & Med Spa Services in Knoxville',
     itemListElement: [
-      { '@type': 'Offer', itemOffered: { '@type': 'MedicalTherapy', name: 'Semaglutide Weight Loss Treatment', alternateName: ['Wegovy', 'Ozempic'] }, priceSpecification: { '@type': 'PriceSpecification', price: '150', priceCurrency: 'USD', unitText: 'starting monthly' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'MedicalTherapy', name: 'Tirzepatide Weight Loss Treatment', alternateName: ['Mounjaro', 'Zepbound'] }, priceSpecification: { '@type': 'PriceSpecification', price: '250', priceCurrency: 'USD', unitText: 'starting monthly' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'MedicalTherapy', name: 'Semaglutide Weight Loss Treatment' }, priceSpecification: { '@type': 'PriceSpecification', price: '150', priceCurrency: 'USD', unitText: 'starting monthly' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'MedicalTherapy', name: 'Tirzepatide Weight Loss Treatment' }, priceSpecification: { '@type': 'PriceSpecification', price: '250', priceCurrency: 'USD', unitText: 'starting monthly' } },
       { '@type': 'Offer', itemOffered: { '@type': 'MedicalTherapy', name: 'Botox / Dysport / Jeuveau' }, priceSpecification: { '@type': 'PriceSpecification', price: '13', priceCurrency: 'USD', unitText: 'per unit' } },
       { '@type': 'Offer', itemOffered: { '@type': 'MedicalTherapy', name: 'Dermal Fillers' } },
       { '@type': 'Offer', itemOffered: { '@type': 'MedicalTherapy', name: 'Laser Hair Reduction' } },
@@ -69,40 +69,33 @@ const jsonLd = {
   sameAs: [],
 };
 
-const stats = [
-  { value: '15-22%', label: 'Average Body Weight Lost' },
-  { value: '1,000+', label: 'Knoxville Patients Treated' },
-  { value: '100%', label: 'Physician Supervised' },
-  { value: '24/7', label: 'Patient Support' },
-];
-
 const features = [
   {
-    title: 'Physician-Supervised Weight Loss',
-    description: 'Every weight loss plan is managed by board-certified physicians experienced in metabolic medicine and GLP-1 therapies, not general practitioners.',
-    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>`
-  },
-  {
-    title: 'FDA-Approved Semaglutide & Tirzepatide',
-    description: 'We prescribe only genuine, FDA-approved semaglutide and tirzepatide sourced from licensed US pharmacies for safe, effective weight loss.',
-    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM4 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 0110.374 21c-2.331 0-4.512-.645-6.374-1.766z" /></svg>`
-  },
-  {
-    title: 'Personalized Weight Loss Plans',
-    description: 'Medication alone is not enough. We combine semaglutide or tirzepatide with tailored nutrition coaching so you keep the weight off long-term.',
+    title: 'Less Hunger, Fewer Cravings',
+    description: 'You feel full on smaller meals, and the cravings quiet down. Eating less is not a daily fight.',
     icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>`
   },
   {
-    title: 'Transparent Weight Loss Clinic Pricing',
-    description: 'No hidden fees or surprise bills. Clear, upfront pricing for all medical weight loss consultations and medication in Knoxville.',
+    title: 'One Shot a Week',
+    description: 'There are no daily pills to remember. You take one shot on the same day each week.',
+    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" /></svg>`
+  },
+  {
+    title: 'Plans From $150 a Month',
+    description: 'Semaglutide starts at $150 a month. Tirzepatide starts at $250 a month.',
     icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`
+  },
+  {
+    title: 'Free Consultation',
+    description: 'The first consultation is free. Ask your questions and get your price before you decide.',
+    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM4 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 0110.374 21c-2.331 0-4.512-.645-6.374-1.766z" /></svg>`
   }
 ];
 ---
 
 <BaseLayout
   title="Knoxville Weight Loss Clinic | Semaglutide & Tirzepatide"
-  description="Medical weight loss clinic in Knoxville, TN. Physician-supervised semaglutide and tirzepatide weight loss programs with FDA-approved GLP-1 injections. Lose 15-22% body weight. Book a consultation today."
+  description="Medical weight loss in Knoxville, TN: a once-a-week semaglutide or tirzepatide shot that makes you less hungry. From $150 a month. Free consultation."
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
@@ -129,16 +122,16 @@ const features = [
             <span class="text-accent">With Semaglutide & Tirzepatide</span>
           </h1>
           <p class="mt-6 text-lg leading-relaxed text-neutral-200">
-            Knoxville's trusted physician-supervised weight loss clinic. We prescribe FDA-approved 
-            <strong class="text-white">semaglutide</strong> (Wegovy/Ozempic) and <strong class="text-white">tirzepatide</strong> 
-            (Mounjaro/Zepbound) to help patients lose 15-22% of their body weight safely and effectively.
+            A once-a-week shot that makes you less hungry. You feel full sooner, you stay full longer,
+            and the cravings quiet down. Plans start at <strong class="text-white">$150 a month</strong>,
+            and the first consultation is free.
           </p>
           <div class="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
             <a
               href="/book"
               class="inline-flex items-center justify-center rounded-xl bg-accent px-8 py-4 text-base font-bold text-primary-dark shadow-xl transition-all hover:bg-accent-light hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-primary-dark"
             >
-              Book a Weight Loss Consultation
+              Book a Free Consultation
             </a>
             <a
               href="/semaglutide/"
@@ -148,16 +141,9 @@ const features = [
             </a>
           </div>
           
-          <div class="mt-10 flex items-center justify-center gap-6 lg:justify-start text-sm text-neutral-300">
-            <div class="flex items-center gap-2">
-              <svg class="h-5 w-5 text-accent" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-              <span>Board-Certified Physicians</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <svg class="h-5 w-5 text-accent" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-              <span>FDA-Approved GLP-1 Medications</span>
-            </div>
-          </div>
+          <p class="mt-8 text-xs text-neutral-300">
+            Medication is prescribed only after a medical evaluation. Results vary.
+          </p>
         </div>
         
         <!-- Hero Visual -->
@@ -165,7 +151,7 @@ const features = [
           <div class="relative rounded-2xl bg-white/5 p-2 backdrop-blur-sm border border-white/10 shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500">
              <img
                src="/weight-loss.webp"
-               alt="Medical weight loss patient consultation at Knoxville Weight Loss Clinic clinic in Knoxville, TN"
+               alt="Medical weight loss consultation at Knoxville Weight Loss Clinic in Knoxville, TN"
                width="1536"
                height="1024"
                class="aspect-[4/3] rounded-xl object-cover"
@@ -183,7 +169,7 @@ const features = [
       <div class="text-center max-w-3xl mx-auto mb-12">
         <h2 class="font-serif text-3xl font-bold text-primary sm:text-4xl mb-4">Why Choose Our Knoxville Weight Loss Clinic</h2>
         <p class="text-lg text-neutral-600 leading-relaxed">
-          We specialize in medical weight loss using semaglutide and tirzepatide, the most effective FDA-approved medications for long-term weight management.
+          Diets are hard because you stay hungry. Medical weight loss works on the hunger itself.
         </p>
       </div>
       <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
@@ -206,7 +192,7 @@ const features = [
       <div class="text-center max-w-3xl mx-auto mb-16">
         <h2 class="font-serif text-3xl font-bold text-primary sm:text-4xl lg:text-5xl mb-6">Semaglutide & Tirzepatide Weight Loss Treatments in Knoxville</h2>
         <p class="text-lg text-neutral-600 leading-relaxed">
-          Our Knoxville weight loss clinic offers two proven GLP-1 medications for medical weight loss. Your physician will recommend semaglutide or tirzepatide based on your health profile, weight loss goals, and medical history.
+          Our Knoxville weight loss clinic offers two GLP-1 medicines. Both are once-a-week shots that make you less hungry. After your medical evaluation, you and your provider pick the one that fits your health, your goals and your budget.
         </p>
       </div>
 
@@ -217,28 +203,28 @@ const features = [
             <div class="absolute top-0 right-0 -mt-4 -mr-4 h-24 w-24 rounded-full bg-accent/10 blur-2xl transition-all group-hover:bg-accent/20"></div>
             
             <div class="flex items-center justify-between mb-4">
-              <span class="inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">Most Effective for Weight Loss</span>
-              <span class="text-sm font-bold text-accent">Starting at $250/mo</span>
+              <span class="inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">Acts on Two Hormones</span>
+              <span class="text-sm font-bold text-accent">From $250 a month</span>
             </div>
             <h3 class="font-serif text-3xl font-bold text-neutral-900 mb-2">Tirzepatide for Weight Loss in Knoxville</h3>
-            <p class="text-sm font-medium text-neutral-500 mb-6 uppercase tracking-wider">Mounjaro &bull; Zepbound</p>
+            <p class="text-sm font-medium text-neutral-500 mb-6 uppercase tracking-wider">One shot a week</p>
             
             <p class="text-neutral-600 mb-8 leading-relaxed">
-              Tirzepatide is the most effective weight loss medication available today. This dual-action GLP-1/GIP receptor agonist delivered up to 22.5% body weight reduction in clinical trials, making it the top choice at our Knoxville weight loss clinic.
+              Tirzepatide acts like two hormones that your body makes after a meal: GLP-1 and GIP. It helps you feel full sooner and stay full longer.
             </p>
             
             <ul class="space-y-3 mb-8">
               <li class="flex items-center text-neutral-700">
                 <svg class="h-5 w-5 text-accent mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-                Up to 22.5% body weight loss in clinical studies
+                Less hunger between meals
               </li>
               <li class="flex items-center text-neutral-700">
                 <svg class="h-5 w-5 text-accent mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-                Dual GLP-1 and GIP receptor targeting
+                Fewer cravings
               </li>
               <li class="flex items-center text-neutral-700">
                 <svg class="h-5 w-5 text-accent mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-                Reduces appetite, cravings, and improves blood sugar
+                No daily pills
               </li>
             </ul>
             
@@ -254,28 +240,28 @@ const features = [
             <div class="absolute top-0 right-0 -mt-4 -mr-4 h-24 w-24 rounded-full bg-primary/5 blur-2xl transition-all group-hover:bg-primary/10"></div>
             
             <div class="flex items-center justify-between mb-4">
-              <span class="inline-block rounded-full bg-neutral-100 px-3 py-1 text-xs font-semibold text-neutral-600">Proven GLP-1 Weight Loss Treatment</span>
-              <span class="text-sm font-bold text-accent">Starting at $150/mo</span>
+              <span class="inline-block rounded-full bg-neutral-100 px-3 py-1 text-xs font-semibold text-neutral-600">Our Lowest Price</span>
+              <span class="text-sm font-bold text-accent">From $150 a month</span>
             </div>
             <h3 class="font-serif text-3xl font-bold text-neutral-900 mb-2">Semaglutide for Weight Loss in Knoxville</h3>
-            <p class="text-sm font-medium text-neutral-500 mb-6 uppercase tracking-wider">Wegovy &bull; Ozempic</p>
+            <p class="text-sm font-medium text-neutral-500 mb-6 uppercase tracking-wider">One shot a week</p>
             
             <p class="text-neutral-600 mb-8 leading-relaxed">
-              Semaglutide is the FDA-approved GLP-1 receptor agonist that revolutionized medical weight loss. Patients using semaglutide at our Knoxville clinic achieve an average of 15% body weight loss with additional cardiovascular health benefits.
+              Semaglutide acts like GLP-1, a hormone that your body makes after a meal. It helps you feel full sooner and stay full longer.
             </p>
             
             <ul class="space-y-3 mb-8">
               <li class="flex items-center text-neutral-700">
                 <svg class="h-5 w-5 text-accent mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-                Average 15% body weight loss with semaglutide
+                Less hunger between meals
               </li>
               <li class="flex items-center text-neutral-700">
                 <svg class="h-5 w-5 text-accent mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-                Proven cardiovascular protection
+                Fewer cravings
               </li>
               <li class="flex items-center text-neutral-700">
                 <svg class="h-5 w-5 text-accent mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-                Well-established safety profile since FDA approval
+                No daily pills
               </li>
             </ul>
             
@@ -294,7 +280,7 @@ const features = [
       <div class="text-center max-w-3xl mx-auto mb-20">
         <h2 class="font-serif text-3xl font-bold text-primary sm:text-4xl mb-6">How Our Medical Weight Loss Program Works</h2>
         <p class="text-lg text-neutral-600">
-          Starting your semaglutide or tirzepatide weight loss treatment in Knoxville is simple. Our streamlined process gets you from consultation to results safely and quickly.
+          Starting semaglutide or tirzepatide in Knoxville takes three steps.
         </p>
       </div>
 
@@ -311,9 +297,9 @@ const features = [
                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" /></svg>
               </div>
             </div>
-            <h3 class="font-serif text-xl font-bold text-neutral-900 mb-3">Weight Loss Consultation</h3>
+            <h3 class="font-serif text-xl font-bold text-neutral-900 mb-3">Free Consultation</h3>
             <p class="text-neutral-600 leading-relaxed">
-              Schedule your comprehensive medical evaluation at our Knoxville clinic. We review your health history, run labs, and determine if semaglutide or tirzepatide is right for you.
+              Book online or call us. We talk about your goals and your health history, and we answer your questions.
             </p>
           </div>
 
@@ -325,9 +311,9 @@ const features = [
                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg>
               </div>
             </div>
-            <h3 class="font-serif text-xl font-bold text-neutral-900 mb-3">Personalized Weight Loss Plan</h3>
+            <h3 class="font-serif text-xl font-bold text-neutral-900 mb-3">Medical Evaluation</h3>
             <p class="text-neutral-600 leading-relaxed">
-              Your physician creates a custom weight loss plan with the right GLP-1 medication, dosage schedule, and nutrition guidance tailored to your body and goals.
+              A provider checks your health to see if the shot is right for you. Then you get your plan and your price.
             </p>
           </div>
 
@@ -339,26 +325,12 @@ const features = [
                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
               </div>
             </div>
-            <h3 class="font-serif text-xl font-bold text-neutral-900 mb-3">Ongoing Weight Loss Support</h3>
+            <h3 class="font-serif text-xl font-bold text-neutral-900 mb-3">Your Weekly Shot</h3>
             <p class="text-neutral-600 leading-relaxed">
-              Regular check-ins to monitor your weight loss progress, adjust semaglutide or tirzepatide dosages, and ensure you stay on track toward your goals.
+              You take one shot a week. You start with a low dose, and we adjust the dose as you go.
             </p>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Weight Loss Results Stats -->
-  <section class="py-16 bg-primary-dark text-white">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-2 gap-8 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-white/10">
-        {stats.map((stat) => (
-          <div class="text-center pt-8 md:pt-0">
-            <p class="font-serif text-4xl font-bold text-accent mb-2">{stat.value}</p>
-            <p class="text-neutral-400 text-sm tracking-wide uppercase">{stat.label}</p>
-          </div>
-        ))}
       </div>
     </div>
   </section>
@@ -399,9 +371,9 @@ const features = [
 
   <!-- CTA Section -->
   <CTA
-    heading="Start Your Medical Weight Loss Journey in Knoxville"
-    text="Schedule a consultation to find out if semaglutide or tirzepatide is right for you. Our Knoxville physicians are ready to help you achieve lasting weight loss results."
-    buttonText="Book Your Weight Loss Consultation"
+    heading="Book a Free Weight Loss Consultation in Knoxville"
+    text="Find out if a once-a-week shot that makes you less hungry is right for you. Plans start at $150 a month."
+    buttonText="Book Your Free Consultation"
     buttonHref="/book/"
   />
 </BaseLayout>

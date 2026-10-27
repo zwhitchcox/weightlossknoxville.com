@@ -10,6 +10,7 @@ interface Props {
   description?: string;
   ogImage?: string;
   article?: boolean;
+  noindex?: boolean;
 }
 
 const {
@@ -17,6 +18,7 @@ const {
   description = SITE_DESCRIPTION,
   ogImage,
   article = false,
+  noindex = false,
 } = Astro.props;
 ---
 
@@ -28,6 +30,7 @@ const {
       description={description}
       ogImage={ogImage}
       ogType={article ? 'article' : 'website'}
+      noindex={noindex}
     />
 
     <!-- Google Fonts -->
@@ -59,5 +62,44 @@ const {
       <slot />
     </main>
     <Footer />
+    <script is:inline>
+      // Carry marketing params (utm_*, gclid, ...) from the landing page to
+      // /book links so the shared booking engine can attribute bookings to
+      // the specific GBP listing / ad that sent the visitor.
+      ;(function () {
+        var KEYS = [
+          'utm_source',
+          'utm_medium',
+          'utm_campaign',
+          'utm_content',
+          'utm_term',
+          'gclid',
+          'gbraid',
+          'wbraid',
+          'msclkid',
+          'fbclid',
+        ]
+        try {
+          var current = new URLSearchParams(location.search)
+          var found = {}
+          KEYS.forEach(function (k) {
+            var v = current.get(k)
+            if (v) found[k] = v
+          })
+          if (Object.keys(found).length)
+            sessionStorage.setItem('mk_params', JSON.stringify(found))
+          var saved = JSON.parse(sessionStorage.getItem('mk_params') || '{}')
+          if (!Object.keys(saved).length) return
+          document.querySelectorAll('a[href^="/book"]').forEach(function (a) {
+            var url = new URL(a.getAttribute('href'), location.origin)
+            KEYS.forEach(function (k) {
+              if (saved[k] && !url.searchParams.has(k))
+                url.searchParams.set(k, saved[k])
+            })
+            a.setAttribute('href', url.pathname + url.search + url.hash)
+          })
+        } catch (e) {}
+      })()
+    </script>
   </body>
 </html>

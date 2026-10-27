@@ -1,0 +1,106 @@
+---
+// Review link landing page — QR codes point here (weightlossknoxvilletn.com/r/<provider>).
+// Public but noindex; SSR so it never appears in the sitemap.
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export const prerender = false;
+
+const { providerId } = Astro.params;
+
+// Normal distribution (seeding ended 2026-07-24 — all listings ranking):
+// each button posts to its own listing.
+const LOCATIONS = [
+	{
+		label: 'Bearden',
+		address: '5113 Kingston Pike, Suite 15c',
+		url: 'https://search.google.com/local/writereview?placeid=ChIJkWEu2yk9XIgR0d0tkwaQ2ac',
+	},
+	{
+		label: 'Farragut',
+		address: '102 S Campbell Station Rd, Suite 8c',
+		url: 'https://search.google.com/local/writereview?placeid=ChIJn1HGW2YvXIgRoEaM1pxtrjg',
+	},
+];
+
+// Sample reviews are fetched fresh per visitor from the main app's
+// /resources/review-sample (proxied by src/middleware.ts). Each text comes
+// from a served-once ledger, so no two customers can ever post identical
+// review text — Google's spam filter removes duplicate reviews and can flag
+// the listing (it happened 2026-07-13 with the old static samples).
+---
+
+<BaseLayout title="Leave us a review" noindex={true}>
+	<section class="py-16 px-6 bg-neutral-50 min-h-[70vh]">
+		<div class="max-w-2xl mx-auto">
+			<h1 class="font-serif text-4xl font-bold text-primary mb-3">Thanks for visiting!</h1>
+			<p class="text-neutral-600 mb-8 leading-relaxed">
+				A quick Google review helps other people in Knoxville find us on their weight
+				loss journey, and it means the world to our team. Pick your location below.
+			</p>
+
+			<div class="bg-white border border-neutral-200 rounded-xl p-6 mb-8 shadow-sm">
+				<div class="text-xs uppercase tracking-wider text-accent font-semibold mb-3">
+					Need a starting point? Make it yours:
+				</div>
+				<blockquote id="sample" class="italic text-neutral-700 leading-relaxed mb-4">Writing you a fresh sample&hellip;</blockquote>
+				<div id="sampleBtns" class="flex gap-3 flex-wrap" style="display:none">
+					<button id="copyBtn" type="button" class="bg-primary text-white font-semibold px-5 py-2.5 rounded-lg cursor-pointer">Copy sample review</button>
+					<button id="shuffleBtn" type="button" class="bg-neutral-100 text-neutral-700 font-semibold px-5 py-2.5 rounded-lg cursor-pointer">Show another</button>
+				</div>
+			</div>
+
+			<div class="grid gap-4">
+				{LOCATIONS.map((l) => (
+					<a class="loc-card flex flex-col gap-1 bg-primary text-white rounded-xl p-5 no-underline hover:-translate-y-0.5 transition-transform" href={l.url} target="_blank" rel="noopener" data-loc={l.label}>
+						<strong class="text-lg">Review our {l.label} clinic</strong>
+						<span class="text-primary-light text-sm opacity-80">{l.address}</span>
+						<span class="text-accent-light font-semibold mt-1">Opens Google Reviews →</span>
+					</a>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<script is:inline define:vars={{ providerId }}>
+		var idx = 0;
+		var samples = [];
+		var brand = 'weight-loss-knox';
+		function track(ev, props) {
+			try { window.posthog && window.posthog.capture(ev, Object.assign({ brand: brand, provider_id: providerId }, props || {})); } catch (e) {}
+		}
+		track('review_link_scanned', {});
+		// Unique-per-visitor samples from the shared engine (same-origin via the
+		// booking proxy). If it fails, show write-your-own guidance — NEVER a
+		// reusable canned sample (duplicate review text gets listings flagged).
+		fetch('/resources/review-sample?brand=weight-loss-knox&count=3')
+			.then(function (r) { return r.json(); })
+			.then(function (data) {
+				samples = (data && data.samples) || [];
+				if (samples.length === 0) throw new Error('no samples');
+				document.getElementById('sample').textContent = samples[0];
+				document.getElementById('sampleBtns').style.display = '';
+				if (samples.length < 2) document.getElementById('shuffleBtn').style.display = 'none';
+			})
+			.catch(function () {
+				document.getElementById('sample').textContent =
+					'In your own words: what brought you in, how the program has gone, and how the team treated you. A sentence or two is perfect.';
+			});
+		document.getElementById('shuffleBtn').addEventListener('click', function () {
+			if (samples.length === 0) return;
+			idx = (idx + 1) % samples.length;
+			document.getElementById('sample').textContent = samples[idx];
+		});
+		document.getElementById('copyBtn').addEventListener('click', function () {
+			if (samples.length === 0) return;
+			navigator.clipboard.writeText(samples[idx]).then(function () {
+				document.getElementById('copyBtn').textContent = 'Copied ✓';
+				track('review_sample_copied', { sample_index: idx });
+			});
+		});
+		document.querySelectorAll('.loc-card').forEach(function (a) {
+			a.addEventListener('click', function () {
+				track('review_location_selected', { location: a.dataset.loc });
+			});
+		});
+	</script>
+</BaseLayout>

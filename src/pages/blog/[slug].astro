@@ -47,7 +47,7 @@ const jsonLd = {
   },
   publisher: {
     "@type": "Organization",
-    name: "Weight Loss Knox",
+    name: "Knoxville Weight Loss Clinic",
     url: "https://weightlossknoxvilletn.com",
   },
   datePublished: post.data.pubDate.toISOString(),
@@ -63,7 +63,7 @@ const jsonLd = {
 ---
 
 <BaseLayout
-  title={`${post.data.title} | Weight Loss Knox Blog`}
+  title={`${post.data.title} | Knoxville Weight Loss Clinic Blog`}
   description={post.data.description}
 >
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />

@@ -2,13 +2,13 @@
 title: "Nutrition Tips While Taking Weight Loss Medication"
 description: "Maximize your results on tirzepatide or semaglutide with these evidence-based nutrition strategies from our Knoxville weight loss team."
 pubDate: "2025-03-01"
-author: "Weight Loss Knox Team"
+author: "Knoxville Weight Loss Clinic Team"
 tags: ["nutrition", "diet tips", "tirzepatide", "semaglutide"]
 ---
 
 Starting a weight loss medication like tirzepatide or semaglutide is a powerful step toward reaching your health goals. These medications work by reducing appetite and helping you feel full with less food — but what you eat during treatment matters just as much as the medication itself.
 
-At Weight Loss Knox in Knoxville, TN, we coach our patients on nutrition strategies that maximize results, minimize side effects, and help build habits that last well beyond the medication phase. Here are our top evidence-based nutrition tips for patients on GLP-1 weight loss medications.
+At Knoxville Weight Loss Clinic in Knoxville, TN, we coach our patients on nutrition strategies that maximize results, minimize side effects, and help build habits that last well beyond the medication phase. Here are our top evidence-based nutrition tips for patients on GLP-1 weight loss medications.
 
 ## Why Nutrition Matters Even More on Medication
 
@@ -156,6 +156,6 @@ When your appetite is low, the last thing you want to do is spend an hour cookin
 
 Perhaps the most important thing to understand is that nutrition habits built during your time on medication are what sustain your results when and if you eventually taper off. Patients who use the appetite-suppressing window of medication to fundamentally reshape how they eat tend to maintain their weight loss far better than those who rely on medication alone.
 
-This is not about perfection. It is about consistent, sustainable choices that become second nature over time. At Weight Loss Knox, we work with you on this from day one — not as an afterthought, but as a core part of your treatment plan.
+This is not about perfection. It is about consistent, sustainable choices that become second nature over time. At Knoxville Weight Loss Clinic, we work with you on this from day one — not as an afterthought, but as a core part of your treatment plan.
 
 Have questions about nutrition on your weight loss medication? [Reach out to our team](/contact) — we are here to help you get the most out of your treatment.

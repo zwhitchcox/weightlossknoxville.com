@@ -7,6 +7,7 @@ interface Props {
   canonicalUrl?: string;
   ogImage?: string;
   ogType?: 'website' | 'article';
+  noindex?: boolean;
 }
 
 const {
@@ -15,9 +16,15 @@ const {
   canonicalUrl = new URL(Astro.url.pathname, SITE_URL).href,
   ogImage = new URL('/og-default.jpg', SITE_URL).href,
   ogType = 'website',
+  noindex = false,
 } = Astro.props;
 
-const fullTitle = title === SITE_TITLE ? title : `${title} | ${SITE_TITLE}`;
+// Skip the suffix when the page title already carries the brand — avoids
+// "Knoxville Weight Loss Clinic | … | Knoxville Weight Loss Clinic - …".
+const fullTitle =
+  title === SITE_TITLE || title.includes('Knoxville Weight Loss Clinic')
+    ? title
+    : `${title} | ${SITE_TITLE}`;
 ---
 
 <meta charset="utf-8" />
@@ -46,5 +53,5 @@ const fullTitle = title === SITE_TITLE ? title : `${title} | ${SITE_TITLE}`;
 <meta name="twitter:image" content={ogImage} />
 
 <!-- Additional SEO -->
-<meta name="robots" content="index, follow" />
+<meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
 <meta name="theme-color" content="#1B4D3E" />

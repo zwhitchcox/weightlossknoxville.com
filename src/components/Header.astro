@@ -1,5 +1,5 @@
 ---
-import { NAV_LINKS } from '../consts';
+import { NAV_LINKS, PHONE } from '../consts';
 
 const currentPath = Astro.url.pathname;
 ---
@@ -17,8 +17,8 @@ const currentPath = Astro.url.pathname;
         </svg>          
       </div>
       <div class="flex flex-col">
-        <span class="font-serif text-xl font-bold leading-none text-primary group-hover:text-primary-dark transition-colors">Weight Loss Knox</span>
-        <span class="text-[0.65rem] uppercase tracking-wider text-neutral-500 font-medium">Medical Weight Loss Clinic</span>
+        <span class="font-serif text-xl font-bold leading-none text-primary group-hover:text-primary-dark transition-colors">Knoxville Weight Loss Clinic</span>
+        <span class="text-[0.65rem] uppercase tracking-wider text-neutral-500 font-medium">Semaglutide &amp; Tirzepatide</span>
       </div>
     </a>
 
@@ -42,7 +42,7 @@ const currentPath = Astro.url.pathname;
       })}
       <div class="ml-4 h-8 w-px bg-neutral-200"></div>
       <a
-        href="/contact/"
+        href="/book"
         class="ml-4 inline-flex items-center justify-center rounded-full bg-primary px-6 py-2.5 text-sm font-semibold text-white shadow-md transition-all hover:bg-primary-dark hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0"
       >
         Book Consultation
@@ -98,13 +98,13 @@ const currentPath = Astro.url.pathname;
       
       <div class="mt-6 border-t border-neutral-100 pt-6">
         <a
-          href="/contact/"
+          href="/book"
           class="flex w-full items-center justify-center rounded-xl bg-primary px-6 py-4 text-center text-base font-bold text-white shadow-lg transition-transform active:scale-[0.98]"
         >
           Book Your Consultation
         </a>
         <p class="mt-4 text-center text-sm text-neutral-500">
-          Or call us at <a href="tel:8655550123" class="font-semibold text-primary">865-555-0123</a>
+          Or call us at <a href={`tel:${PHONE.replace(/\D/g, '')}`} class="font-semibold text-primary">{PHONE}</a>
         </p>
       </div>
     </nav>

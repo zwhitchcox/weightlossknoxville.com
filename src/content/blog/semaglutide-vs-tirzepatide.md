@@ -2,11 +2,11 @@
 title: "Semaglutide vs Tirzepatide: Comparing Two Leading Weight Loss Medications"
 description: "A comprehensive comparison of semaglutide and tirzepatide for medical weight loss, including effectiveness, side effects, and which may be right for you."
 pubDate: "2025-02-01"
-author: "Weight Loss Knox Team"
+author: "Knoxville Weight Loss Clinic Team"
 tags: ["semaglutide", "tirzepatide", "weight loss medications", "comparison"]
 ---
 
-Two medications have dominated the conversation around medical weight loss in recent years: semaglutide and tirzepatide. Both are injectable GLP-1 based therapies that have shown remarkable results in clinical trials, and both are now widely prescribed by weight loss clinics across the country — including here at Weight Loss Knox in Knoxville, TN.
+Two medications have dominated the conversation around medical weight loss in recent years: semaglutide and tirzepatide. Both are injectable GLP-1 based therapies that have shown remarkable results in clinical trials, and both are now widely prescribed by weight loss clinics across the country — including here at Knoxville Weight Loss Clinic in Knoxville, TN.
 
 But how do these two medications actually compare? Which one produces better results? Are the side effects different? And most importantly, how do you decide which is right for you?
 
@@ -121,7 +121,7 @@ The risk profiles are similar enough that the choice between medications rarely 
 - Maintenance dose: 5 mg, 10 mg, or 15 mg (individualized)
 - Available in prefilled, single-dose pens
 
-Both medications use a gradual dose escalation to minimize side effects. Your provider at Weight Loss Knox will customize your titration schedule based on how your body responds.
+Both medications use a gradual dose escalation to minimize side effects. Your provider at Knoxville Weight Loss Clinic will customize your titration schedule based on how your body responds.
 
 ## Cost and Insurance Considerations
 
@@ -131,7 +131,7 @@ Cost is a significant factor for many patients, and the landscape is complex:
 
 **Tirzepatide (Zepbound)** is newer, and insurance coverage is still catching up. The list price is comparable, ranging from approximately $1,000–$1,100 per month without insurance. However, the manufacturer has offered savings programs that can reduce out-of-pocket costs for eligible patients.
 
-At Weight Loss Knox, we work with patients to navigate insurance coverage and explore all available options to make treatment as affordable as possible. We also offer competitive self-pay pricing for patients who do not have insurance coverage for weight loss medications.
+At Knoxville Weight Loss Clinic, we work with patients to navigate insurance coverage and explore all available options to make treatment as affordable as possible. We also offer competitive self-pay pricing for patients who do not have insurance coverage for weight loss medications.
 
 ## Which Medication Is Right for You?
 
@@ -155,7 +155,7 @@ There is no single "best" medication — the right choice depends on your indivi
 
 ### Factors Your Provider Will Consider
 
-When you come to Weight Loss Knox for a consultation, our medical team evaluates:
+When you come to Knoxville Weight Loss Clinic for a consultation, our medical team evaluates:
 
 - Your BMI and weight loss goals
 - Existing medical conditions (diabetes, cardiovascular disease, etc.)
@@ -170,6 +170,6 @@ Both semaglutide and tirzepatide are highly effective, evidence-based weight los
 
 The most important factor is not which medication you take — it is that you work with a qualified medical team that can guide your treatment, monitor your progress, and integrate medication with the lifestyle changes necessary for lasting success.
 
-At Weight Loss Knox, we prescribe both semaglutide and tirzepatide and will help you determine which option aligns best with your health, goals, and budget. Weight loss is personal, and your treatment plan should be too.
+At Knoxville Weight Loss Clinic, we prescribe both semaglutide and tirzepatide and will help you determine which option aligns best with your health, goals, and budget. Weight loss is personal, and your treatment plan should be too.
 
 [Schedule a consultation](/contact) with our Knoxville medical weight loss team to discuss which medication may be right for you.

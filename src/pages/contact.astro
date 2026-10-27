@@ -5,11 +5,11 @@ import { SITE_URL, PHONE, EMAIL, LOCATIONS } from '../consts';
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ContactPage',
-  name: 'Contact Weight Loss Knox',
+  name: 'Contact Knoxville Weight Loss Clinic',
   url: `${SITE_URL}/contact/`,
   mainEntity: {
     '@type': 'MedicalBusiness',
-    name: 'Weight Loss Knox',
+    name: 'Knoxville Weight Loss Clinic',
     telephone: PHONE,
     email: EMAIL,
     address: [
@@ -49,8 +49,8 @@ const jsonLd = {
 ---
 
 <BaseLayout
-  title="Contact Us | Weight Loss Knox | Knoxville TN"
-  description="Contact Weight Loss Knox to schedule your medical weight loss consultation. Two locations in Knoxville: Bearden and Farragut. Call us or fill out our online form today."
+  title="Contact Us | Knoxville Weight Loss Clinic | Knoxville TN"
+  description="Contact Knoxville Weight Loss Clinic to schedule your medical weight loss consultation. Two locations in Knoxville: Bearden and Farragut. Call us or fill out our online form today."
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
@@ -81,140 +81,13 @@ const jsonLd = {
         <div class="rounded-2xl bg-white p-8 shadow-card border border-neutral-100">
           <h2 class="font-serif text-2xl font-bold text-primary">Schedule a Consultation</h2>
           <p class="mt-2 text-sm text-neutral-500">
-            Fill out the form below and our team will contact you within one business day.
+            Booking is fully online: see real-time availability and reserve your
+            consultation in about a minute. No forms, no phone tag.
           </p>
-
-          <div id="form-status" class="hidden rounded-lg p-4 mb-4 text-sm"></div>
-          <form id="contact-form" class="mt-8 space-y-6">
-            <div class="grid gap-6 sm:grid-cols-2">
-              <div>
-                <label for="firstName" class="block text-sm font-medium text-neutral-700">First Name *</label>
-                <input
-                  type="text"
-                  id="firstName"
-                  name="firstName"
-                  required
-                  class="mt-1.5 block w-full rounded-lg border border-neutral-200 px-4 py-3 text-sm text-neutral-800 shadow-sm transition-colors focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none bg-neutral-50"
-                />
-              </div>
-              <div>
-                <label for="lastName" class="block text-sm font-medium text-neutral-700">Last Name *</label>
-                <input
-                  type="text"
-                  id="lastName"
-                  name="lastName"
-                  required
-                  class="mt-1.5 block w-full rounded-lg border border-neutral-200 px-4 py-3 text-sm text-neutral-800 shadow-sm transition-colors focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none bg-neutral-50"
-                />
-              </div>
-            </div>
-
-            <div class="grid gap-6 sm:grid-cols-2">
-              <div>
-                <label for="email" class="block text-sm font-medium text-neutral-700">Email Address *</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  class="mt-1.5 block w-full rounded-lg border border-neutral-200 px-4 py-3 text-sm text-neutral-800 shadow-sm transition-colors focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none bg-neutral-50"
-                />
-              </div>
-              <div>
-                <label for="phone" class="block text-sm font-medium text-neutral-700">Phone Number *</label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  required
-                  class="mt-1.5 block w-full rounded-lg border border-neutral-200 px-4 py-3 text-sm text-neutral-800 shadow-sm transition-colors focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none bg-neutral-50"
-                />
-              </div>
-            </div>
-
-            <div class="grid gap-6 sm:grid-cols-2">
-              <div>
-                <label for="location" class="block text-sm font-medium text-neutral-700">Preferred Location</label>
-                <select
-                  id="location"
-                  name="location"
-                  class="mt-1.5 block w-full rounded-lg border border-neutral-200 px-4 py-3 text-sm text-neutral-800 shadow-sm transition-colors focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none bg-neutral-50"
-                >
-                  <option value="">Select a location</option>
-                  <option value="bearden">Bearden (Knoxville)</option>
-                  <option value="farragut">Farragut</option>
-                </select>
-              </div>
-              <div>
-                <label for="interest" class="block text-sm font-medium text-neutral-700">I'm interested in...</label>
-                <select
-                  id="interest"
-                  name="interest"
-                  class="mt-1.5 block w-full rounded-lg border border-neutral-200 px-4 py-3 text-sm text-neutral-800 shadow-sm transition-colors focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none bg-neutral-50"
-                >
-                  <option value="">Select an option</option>
-                  <option value="tirzepatide">Tirzepatide (Mounjaro/Zepbound)</option>
-                  <option value="semaglutide">Semaglutide (Wegovy/Ozempic)</option>
-                  <option value="botox">Botox / Dysport / Jeuveau</option>
-                  <option value="filler">Dermal Fillers</option>
-                  <option value="laser">Laser Treatments</option>
-                  <option value="microneedling">Microneedling</option>
-                  <option value="chemical-peel">Chemical Peels</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-            </div>
-
-            <div>
-              <label for="referral" class="block text-sm font-medium text-neutral-700">How did you hear about us?</label>
-              <select
-                id="referral"
-                name="referral"
-                class="mt-1.5 block w-full rounded-lg border border-neutral-200 px-4 py-3 text-sm text-neutral-800 shadow-sm transition-colors focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none bg-neutral-50"
-              >
-                <option value="">Select an option</option>
-                <option value="google">Google Search</option>
-                <option value="referral">Friend/Family Referral</option>
-                <option value="doctor">Doctor Referral</option>
-                <option value="social">Social Media</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-
-            <div>
-              <label for="message" class="block text-sm font-medium text-neutral-700">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="4"
-                class="mt-1.5 block w-full rounded-lg border border-neutral-200 px-4 py-3 text-sm text-neutral-800 shadow-sm transition-colors focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none bg-neutral-50"
-                placeholder="Tell us about your goals or any questions you have..."
-              ></textarea>
-            </div>
-
-            <!-- SMS Consent Checkbox -->
-            <div class="rounded-lg border border-neutral-200 bg-neutral-50 p-4">
-              <label class="flex items-start gap-3 cursor-pointer">
-                <input
-                  type="checkbox"
-                  id="smsConsent"
-                  name="smsConsent"
-                  required
-                  class="mt-1 h-4 w-4 rounded border-neutral-300 text-primary focus:ring-primary/20 flex-shrink-0"
-                />
-                <span class="text-sm text-neutral-700">
-                  I agree to receive SMS/text messages from Weight Loss Knox, including appointment reminders, account notifications, and treatment-related updates. Messaging frequency may vary. Message and data rates may apply. Reply <strong>STOP</strong> to opt-out at any time. Reply <strong>HELP</strong> for support. SMS consent and phone numbers are not shared with any third parties or affiliates. View our <a href="/privacy/" class="text-primary underline hover:text-primary-light">Privacy Policy</a> and <a href="/terms/" class="text-primary underline hover:text-primary-light">Terms & Conditions</a>. <span class="text-red-500">*</span>
-                </span>
-              </label>
-            </div>
-
-            <button
-              type="submit"
-              class="w-full rounded-xl bg-accent px-8 py-4 text-base font-bold text-primary-dark shadow-lg transition-all hover:bg-accent-light hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 sm:w-auto"
-            >
-              Submit Request
-            </button>
-          </form>
+          <div class="mt-6 rounded-xl border-2 border-accent bg-accent/10 p-6 text-center">
+            <a href="/book?service=weight-loss-consultation" class="inline-block rounded-lg bg-primary px-8 py-4 text-base font-bold text-white transition-colors hover:bg-primary-light">Book Your Consultation Online</a>
+            <p class="mt-3 text-sm text-neutral-600">Prefer to talk first? Call or text us and a team member will help you get scheduled.</p>
+          </div>
         </div>
       </div>
 
@@ -300,60 +173,4 @@ const jsonLd = {
     </div>
   </section>
 
-  <script>
-    const form = document.getElementById('contact-form') as HTMLFormElement | null;
-    const status = document.getElementById('form-status');
-
-    form?.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement | null;
-      const originalText = submitBtn?.textContent || '';
-
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Sending...';
-      }
-
-      if (status) {
-        status.classList.add('hidden');
-      }
-
-      const formData = new FormData(form);
-      const data = Object.fromEntries(formData.entries());
-
-      try {
-        const res = await fetch('/api/contact', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data),
-        });
-
-        const result = await res.json();
-
-        if (status) {
-          status.classList.remove('hidden');
-          if (res.ok) {
-            status.className = 'rounded-lg p-4 mb-4 text-sm bg-green-50 text-green-800 border border-green-200';
-            status.textContent = result.message;
-            form.reset();
-          } else {
-            status.className = 'rounded-lg p-4 mb-4 text-sm bg-red-50 text-red-800 border border-red-200';
-            status.textContent = result.error || 'Something went wrong. Please try again.';
-          }
-        }
-      } catch {
-        if (status) {
-          status.classList.remove('hidden');
-          status.className = 'rounded-lg p-4 mb-4 text-sm bg-red-50 text-red-800 border border-red-200';
-          status.textContent = 'Network error. Please try again or call us directly.';
-        }
-      } finally {
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.textContent = originalText;
-        }
-      }
-    });
-  </script>
 </BaseLayout>

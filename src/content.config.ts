@@ -9,7 +9,7 @@ const blog = defineCollection({
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     heroImage: z.string().optional(),
-    author: z.string().default("Weight Loss Knox Team"),
+    author: z.string().default("Knoxville Weight Loss Clinic Team"),
     tags: z.array(z.string()).optional(),
     draft: z.boolean().default(false),
   }),

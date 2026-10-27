@@ -1,0 +1,31 @@
+---
+// Provider index for review links (staff-facing). Public but noindex and not
+// in the sitemap. UUIDs are Boulevard staff ids — regenerate the list with
+// `pnpm exec tsx scripts/review-links.ts` in the main hitchcoxaesthetics repo.
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export const prerender = false;
+
+const PROVIDERS = [
+	{ name: 'Sarah Hitchcox', id: 'c0069cf2-aee2-4a2c-a6eb-5abe62192e89' },
+	{ name: 'Tasheema Fair', id: '950dc5ca-ab76-478b-8c9c-9423571ea4cb' },
+	{ name: 'Zane Hitchcox', id: '9cb21438-74ee-466f-90a8-f4af5c3f3ca8' },
+];
+---
+
+<BaseLayout title="Review links" noindex={true}>
+	<section class="py-16 px-6 bg-neutral-50 min-h-[60vh]">
+		<div class="max-w-xl mx-auto">
+			<h1 class="font-serif text-3xl font-bold text-primary mb-2">Review links by provider</h1>
+			<p class="text-neutral-600 mb-6">Each provider has their own review link and QR code, so scans stay attributable.</p>
+			<div class="grid gap-3">
+				{PROVIDERS.map((p) => (
+					<a class="flex justify-between items-baseline gap-4 bg-white border border-neutral-200 rounded-xl px-5 py-4 no-underline text-neutral-800 hover:border-primary transition-colors" href={`/r/${p.id}`}>
+						<strong>{p.name}</strong>
+						<span class="text-accent text-xs">/r/{p.id.slice(0, 8)}…</span>
+					</a>
+				))}
+			</div>
+		</div>
+	</section>
+</BaseLayout>

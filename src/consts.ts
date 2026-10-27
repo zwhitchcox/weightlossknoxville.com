@@ -1,4 +1,4 @@
-export const SITE_TITLE = 'Weight Loss Knox';
+export const SITE_TITLE = 'Knoxville Weight Loss Clinic - Semaglutide & Tirzepatide';
 export const SITE_DESCRIPTION =
   'Medical weight loss and med spa clinic in Knoxville, TN specializing in semaglutide, tirzepatide, Botox, fillers, laser treatments, and more. Physician-supervised programs with proven results.';
 export const SITE_URL = 'https://weightlossknoxvilletn.com';

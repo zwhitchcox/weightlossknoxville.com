@@ -1,14 +1,14 @@
 ---
 title: "What to Expect at Your First Medical Weight Loss Consultation"
-description: "Planning your first visit to Weight Loss Knox? Here's everything you need to know about our initial consultation process."
+description: "Planning your first visit to Knoxville Weight Loss Clinic? Here's everything you need to know about our initial consultation process."
 pubDate: "2025-02-15"
-author: "Weight Loss Knox Team"
+author: "Knoxville Weight Loss Clinic Team"
 tags: ["consultation", "getting started", "weight loss program"]
 ---
 
 Taking the first step toward medical weight loss can feel both exciting and a little nerve-wracking. You might be wondering what actually happens during an initial consultation, whether you will qualify for medication, and how long the whole process takes.
 
-At Weight Loss Knox in Knoxville, TN, we have designed our consultation process to be thorough but also straightforward and comfortable. We want you to leave your first visit feeling informed, confident, and ready to start your weight loss journey. Here is a complete walkthrough of what to expect.
+At Knoxville Weight Loss Clinic in Knoxville, TN, we have designed our consultation process to be thorough but also straightforward and comfortable. We want you to leave your first visit feeling informed, confident, and ready to start your weight loss journey. Here is a complete walkthrough of what to expect.
 
 ## Before Your Appointment: What to Bring
 
@@ -120,7 +120,7 @@ Plan for your first visit to take approximately **45 minutes to one hour**. This
 
 ## Ready to Take the First Step?
 
-If you have been considering medical weight loss, your first consultation at Weight Loss Knox is the moment everything starts to change. You will walk in with questions and walk out with a clear, personalized plan backed by science and supported by a team that is genuinely invested in your success.
+If you have been considering medical weight loss, your first consultation at Knoxville Weight Loss Clinic is the moment everything starts to change. You will walk in with questions and walk out with a clear, personalized plan backed by science and supported by a team that is genuinely invested in your success.
 
 We see patients from across the Knoxville area, including Farragut, Maryville, Oak Ridge, and surrounding East Tennessee communities. Wherever you are coming from, we are here to help.
 
